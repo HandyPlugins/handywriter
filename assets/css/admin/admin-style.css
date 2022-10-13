@@ -1,0 +1,86 @@
+/**
+* HandyWriter - Admin Styles
+*/
+@import url("@wpmudev/shared-ui/dist/css/shared-ui.css");
+
+.handywriter-button{
+}
+
+.plagiarism-link{
+	overflow-wrap: break-word;
+}
+
+
+#content-template-selection .sui-tag-beta{
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	background-color: #8d00b1;
+	color: #fff;
+}
+
+.sui-box-content-footer{
+	padding: 10px!important;
+}
+
+
+.sui-modal.sui-active{
+	z-index:9999;
+}
+
+.hw-card-button{
+	text-decoration: none!important;
+	color: #333!important;;
+}
+
+.copy-to-clipboard{
+	cursor:pointer;
+}
+
+#handywriter-classic-editor-meta-wrapper{
+	margin: 0!important;
+}
+
+#handywriter-classic-editor-meta-box{
+	box-shadow: none;
+	margin-bottom: 0!important;
+}
+
+#handywriter-classic-editor-meta-box .sui-box-body{
+	padding:10px;
+}
+
+#handywriter-classic-editor-meta-box .sui-form-field{
+	margin-bottom:10px;
+}
+
+.handywriter-set-title {
+	cursor: pointer;
+}
+
+.handywriter-content-loading {
+	display: none;
+	text-align: center;
+}
+
+.handywriter-content-loading img {
+	vertical-align: middle;
+}
+
+.handywriter-modal-warning {
+	margin-top: 20px;
+}
+
+#handywriter-content-results ol li {
+	color: #1d2327;
+	font-weight: 600;
+	font-size: 1.3em;
+}
+
+#handywriter-sidebar .components-notice.is-dismissible{
+	padding-right: 0!important;
+}
+
+#hwusage-modal{
+	max-width: 70%!important;
+}

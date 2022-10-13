@@ -1,0 +1,37 @@
+{
+  "name": "handywriter",
+  "version": "1.0.0-rc1",
+  "scripts": {
+    "start": "npm run watch",
+    "watchhot": "10up-toolkit watch --port=5010 --hot",
+    "watch": "10up-toolkit watch",
+    "build": "10up-toolkit build",
+    "format-js": "10up-toolkit format-js",
+    "lint-js": "10up-toolkit lint-js",
+    "lint-style": "10up-toolkit lint-style",
+    "test": "10up-toolkit test-unit-jest",
+    "clean-dist": "rm -rf ./dist",
+    "make-pot": "wp i18n make-pot . languages/handywriter.pot --include='includes/,assets/js/' --package-name=handywriter",
+    "build-release": "npm install --production=false && composer install && npm run build && npm run make-pot"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "@wpmudev/shared-ui": "^2.12.13",
+    "10up-toolkit": "^4.1",
+    "typewriter-effect": "^2.18.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "10up-toolkit": {
+    "entry": {
+      "admin": "./assets/js/admin/admin.js",
+      "block-editor": "./assets/js/admin/block-editor.js",
+      "classic-editor": "./assets/js/admin/classic-editor.js",
+      "classic-editor-plugin": "./assets/js/admin/classic-editor-plugin.js"
+    },
+    "wpDependencyExternals": false
+  }
+}
