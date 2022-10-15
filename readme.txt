@@ -1,4 +1,4 @@
-=== Handywriter ===
+=== Handywriter – AI-Powered Writing Assistant for WordPress ===
 Contributors:      handyplugins, m_uysl
 Tags:              content writing, AI, writing assistant, copywriting, copywriter
 Requires at least: 5.4
@@ -8,7 +8,7 @@ Stable tag:        1.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-AI-Powered writing assistant for WordPress. Write better content faster.
+AI-Powered writing assistant for WordPress. Create unique content effortlessly.
 
 == Description ==
 
@@ -102,7 +102,7 @@ The plugin is free. But you will need a license to get the benefits of the plugi
 
 == Changelog ==
 
-= 1.0 (October 13, 2022) =
+= 1.0 (October 15, 2022) =
 * First release
 
 == Upgrade Notice ==
