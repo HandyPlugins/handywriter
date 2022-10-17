@@ -59,13 +59,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</li>
 
 					<li>
-						<label for="content_template_tweet_ideas" class="sui-box-selector">
-							<input type="radio" name="content_template" value="tweet-ideas" data-form-heading="<?php esc_html_e( 'Tweet Ideas', 'handywriter' ); ?>" id="content_template_tweet_ideas" aria-labelledby="tweet-ideas-label" aria-describedby="tweet_ideas_description">
+						<label for="content_template_value_proposition" class="sui-box-selector">
+							<input type="radio" name="content_template" value="value-proposition" data-form-heading="<?php esc_html_e( 'Value Proposition', 'handywriter' ); ?>" id="content_template_value_proposition" aria-labelledby="value-proposition-label" aria-describedby="value_proposition_description">
 							<span aria-hidden="true">
-								<span class="sui-icon-social-twitter"></span>
-								<span id="tweet-ideas-label" aria-hidden="true"><?php esc_html_e( 'Tweet Ideas', 'handywriter' ); ?></span>
+								<span class="sui-icon-send" aria-hidden="true"></span>
+								<span id="value-proposition-label" aria-hidden="true"><?php esc_html_e( 'Value Proposition', 'handywriter' ); ?></span>
 							</span>
-							<span id="tweet_ideas_description" aria-hidden="true"><?php esc_html_e( 'Easy to engage with your customers.', 'handywriter' ); ?></span>
+							<span id="value_proposition_description" aria-hidden="true"><?php esc_html_e( 'Create a value proposition statement for your product, or service.', 'handywriter' ); ?></span>
 						</label>
 					</li>
 
@@ -225,15 +225,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</fieldset>
 				<!-- Tweet Ideas -->
-				<fieldset id="tweet-ideas-wrapper" class="sui-hidden">
+				<fieldset id="value-proposition-wrapper" class="sui-hidden">
 					<div class="sui-form-field">
-						<label for="tweet_ideas_name" id="label-tweet_ideas_name" class="sui-label">
+						<label for="value_proposition_name" id="label-value_proposition_name" class="sui-label">
 							<?php esc_html_e( 'Name of your product/service?', 'handywriter' ); ?>
 						</label>
 						<input
 							placeholder="Handywriter"
-							id="tweet_ideas_name"
-							name="tweet_ideas_name"
+							id="value_proposition_name"
+							name="value_proposition_name"
 							class="sui-form-control"
 							value=""
 						/>
@@ -241,12 +241,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="sui-form-field">
 
-						<label for="tweet_ideas_description" id="label-tweet_ideas_description" class="sui-label"><?php esc_html_e( 'Description', 'handywriter' ); ?></label>
+						<label for="value_proposition_description" id="label-value_proposition_description" class="sui-label"><?php esc_html_e( 'Description', 'handywriter' ); ?></label>
 
 						<textarea
 							placeholder="<?php esc_html_e( 'Handywriter is a WordPress plugin that allows to create content for your website in a few clicks.', 'handywriter' ); ?>"
-							id="tweet_ideas_description"
-							name="tweet_ideas_description"
+							id="value_proposition_description"
+							name="value_proposition_description"
 							class="sui-form-control"
 							aria-labelledby="label-blog_ideas_description"
 						></textarea>

@@ -492,11 +492,6 @@ function render_results( $contents = [], $content_template = '' ) {
 				<button type="button" class="sui-button copy-to-clipboard" data-clipboard-target="#<?php printf( 'result-%d-content', absint( $id ) ); ?>">
 					<?php esc_html_e( 'Copy', 'handywriter' ); ?>
 				</button>
-				<?php if ( 'tweet-ideas' === $content_template ) : ?>
-					<a href="https://twitter.com/intent/tweet?text=<?php echo rawurlencode( $content ); ?>" class="sui-button sui-button-blue" target="_blank" rel="noopener">
-						<span class="sui-icon-social-twitter" aria-hidden="true"></span> <?php esc_html_e( 'Tweet', 'handywriter' ); ?>
-					</a>
-				<?php endif; ?>
 			</div>
 		</div>
 	<?php endforeach; ?>
