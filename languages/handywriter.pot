@@ -2,23 +2,20 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: handywriter 1.0\n"
+"Project-Id-Version: handywriter 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/handywriter\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-13T12:52:11+00:00\n"
+"POT-Creation-Date: 2022-10-17T08:19:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: handywriter\n"
 
 #. Plugin Name of the plugin
-#: includes/admin/dashboard.php:87
-#: includes/admin/dashboard.php:129
-#: includes/admin/partials/header.php:21
-msgid "Handywriter"
+msgid "Handywriter – AI-Powered Writing Assistant for WordPress"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -39,6 +36,12 @@ msgstr ""
 
 #: includes/admin/dashboard.php:86
 msgid "Handywriter Settings"
+msgstr ""
+
+#: includes/admin/dashboard.php:87
+#: includes/admin/dashboard.php:129
+#: includes/admin/partials/header.php:21
+msgid "Handywriter"
 msgstr ""
 
 #: includes/admin/dashboard.php:99
@@ -62,7 +65,7 @@ msgstr ""
 #: includes/admin/dashboard.php:168
 #: includes/admin/dashboard.php:292
 #: includes/admin/dashboard.php:371
-#: includes/admin/dashboard.php:519
+#: includes/admin/dashboard.php:514
 msgid "You do not have permission to perform this action!"
 msgstr ""
 
@@ -114,90 +117,86 @@ msgstr[1] ""
 msgid "Copy"
 msgstr ""
 
-#: includes/admin/dashboard.php:497
-msgid "Tweet"
-msgstr ""
-
-#: includes/admin/dashboard.php:515
+#: includes/admin/dashboard.php:510
 msgid "Login link could not be generated because: Invalid ajax nonce!"
 msgstr ""
 
-#: includes/admin/dashboard.php:525
+#: includes/admin/dashboard.php:520
 msgid "Unknown content type."
 msgstr ""
 
-#: includes/admin/dashboard.php:558
+#: includes/admin/dashboard.php:553
 msgid "No content has been generated!"
 msgstr ""
 
-#: includes/admin/dashboard.php:606
+#: includes/admin/dashboard.php:601
 #: assets/js/admin/block-editor/sidebar.js:373
 msgid "Handywriter Assistant"
 msgstr ""
 
-#: includes/admin/dashboard.php:636
+#: includes/admin/dashboard.php:631
 #: assets/js/admin/block-editor/sidebar.js:398
 msgid "Write a Post"
 msgstr ""
 
-#: includes/admin/dashboard.php:645
+#: includes/admin/dashboard.php:640
 #: assets/js/admin/block-editor/sidebar.js:412
 msgid "Suggest a Title"
 msgstr ""
 
-#: includes/admin/dashboard.php:651
+#: includes/admin/dashboard.php:646
 #: assets/js/admin/block-editor/sidebar.js:425
 msgid "Create a Summary"
 msgstr ""
 
-#: includes/admin/dashboard.php:657
+#: includes/admin/dashboard.php:652
 #: assets/js/admin/block-editor/sidebar.js:438
 msgid "Create a Meta Description"
 msgstr ""
 
-#: includes/admin/dashboard.php:663
+#: includes/admin/dashboard.php:658
 #: assets/js/admin/block-editor/sidebar.js:451
 msgid "Plagiarism Check"
 msgstr ""
 
-#: includes/admin/dashboard.php:746
+#: includes/admin/dashboard.php:741
 msgid "Click to select this"
 msgstr ""
 
-#: includes/admin/dashboard.php:803
+#: includes/admin/dashboard.php:798
 msgid "Settings saved."
 msgstr ""
 
-#: includes/admin/dashboard.php:862
-#: includes/admin/dashboard.php:866
+#: includes/admin/dashboard.php:857
+#: includes/admin/dashboard.php:861
 msgid "You can not perform this action!"
 msgstr ""
 
-#: includes/admin/dashboard.php:904
+#: includes/admin/dashboard.php:899
 msgid "No usage info has been found!"
 msgstr ""
 
-#: includes/admin/dashboard.php:919
+#: includes/admin/dashboard.php:914
 msgid "No record has been found yet! The details will shown here once you spend some credits."
 msgstr ""
 
-#: includes/admin/dashboard.php:927
+#: includes/admin/dashboard.php:922
 msgid "Shows most recent 50 usage."
 msgstr ""
 
-#: includes/admin/dashboard.php:935
+#: includes/admin/dashboard.php:930
 msgid "Time"
 msgstr ""
 
-#: includes/admin/dashboard.php:936
+#: includes/admin/dashboard.php:931
 msgid "Credits"
 msgstr ""
 
-#: includes/admin/dashboard.php:937
+#: includes/admin/dashboard.php:932
 msgid "Domain"
 msgstr ""
 
-#: includes/admin/dashboard.php:938
+#: includes/admin/dashboard.php:933
 msgid "Type"
 msgstr ""
 
@@ -252,11 +251,11 @@ msgstr ""
 
 #: includes/admin/partials/content-templates.php:63
 #: includes/admin/partials/content-templates.php:66
-msgid "Tweet Ideas"
+msgid "Value Proposition"
 msgstr ""
 
 #: includes/admin/partials/content-templates.php:68
-msgid "Easy to engage with your customers."
+msgid "Create a value proposition statement for your product, or service."
 msgstr ""
 
 #: includes/admin/partials/content-templates.php:74
