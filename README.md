@@ -27,7 +27,7 @@ __Generate More Content:__ Complete a sentence or paragraph. Handywriter will ge
 
 __Grammar and Spelling Fix:__ Select a piece of content and check for grammar errors. It will automatically replace the content with the correct one.
 
-__Content Templates:__ Get new blog ideas? Looking for something to tweet? Handywriter will create the content you need the most, right away!
+__Content Templates:__ Handywriter will create the content you need the most, right away!
 
 __History:__ You can keep records of the generated results.
 
@@ -38,7 +38,7 @@ __History:__ You can keep records of the generated results.
 - __Blog Ideas:__ Find a next blog idea for your blog.
 - __Ecommerce Product Descriptions:__ Give more details about your products.
 - __Google Ad Copy:__ Generate an ad copy for your promotional campaign or product.
-- __Tweet Ideas:__ Generate engaging tweets for your Twitter followers.
+- __Value Proposition:__ Create a value proposition statement for your product, or service.
 - __YouTube Video Description:__ Ranks on YouTube? Generate a video description for your next video.
 - __Personal Bio:__ Create a personal bio about you.
 - __Call to Action Ideas:__ Create a call to action that converts.

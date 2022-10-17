@@ -260,12 +260,12 @@ function get_content_template_title( $request_args, $results_count ) {
 			);
 
 			break;
-		case 'tweet-ideas':
+		case 'value-proposition':
 			$title = sprintf(
-			// translators: %1$d is the number of results, %2$s twitter idea for
-				_n( '%1$d Tweet Idea generated about %2$s', '%1$d Tweet Ideas generated about %2$s', $results_count, 'handywriter' ),
+			// translators: %1$d is the number of results, %2$s value proposition for
+				_n( '%1$d Value Proposition generated about %2$s', '%1$d Value Propositions generated about %2$s', $results_count, 'handywriter' ),
 				$results_count,
-				$form_data['tweet_ideas_name']
+				$form_data['value_proposition_name']
 			);
 
 			break;

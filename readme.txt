@@ -35,7 +35,7 @@ __Generate More Content:__ Complete a sentence or paragraph. Handywriter will ge
 
 __Grammar and Spelling Fix:__ Select a piece of content and check for grammar errors. It will automatically replace the content with the correct one.
 
-__Content Templates:__ Get new blog ideas? Looking for something to tweet? Handywriter will create the content you need the most, right away!
+__Content Templates:__ Handywriter will create the content you need the most, right away!
 
 __History:__ You can keep records of the generated results.
 
