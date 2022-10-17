@@ -4,7 +4,7 @@ Tags:              content writing, AI, writing assistant, copywriting, copywrit
 Requires at least: 5.4
 Tested up to:      6.1
 Requires PHP:      5.6
-Stable tag:        1.0
+Stable tag:        1.0.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,11 +17,6 @@ Handywriter is an AI-powered writing assistant that can help you write better, f
 You don't have to leave your favorite editor to bring AI power to WordPress. Handywriter works with both block editor and classic editor. So you can write your content in the editor you already know and love.
 
 **[Learn more about Handywriter](https://handyplugins.co/handywriter/)**
-
-= How does it work?  =
-Handywriter heavily relies on the power of OpenAI's GPT-3. It has been trained on hundreds of billions of words to generate content that is (almost) indistinguishable from human writing.
-
-With Handywriter, this much AI power is just a few clicks away to speed up your content creation.
 
 = Features  =
 Handywriter comes with various features to help you generate content.
@@ -101,6 +96,10 @@ The plugin is free. But you will need a license to get the benefits of the plugi
 7. Content templates.
 
 == Changelog ==
+
+= 1.0.1 (October 17, 2022) =
+* Remove tweet ideas template
+* Add value proposition template
 
 = 1.0 (October 15, 2022) =
 * First release
