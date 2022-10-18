@@ -57,3 +57,4 @@ We have used code or ideas from the following projects:
 
 * [10up Toolkit](https://github.com/10up/10up-toolkit) for building tools.
 * [Shared UI](https://github.com/wpmudev/shared-ui) for admin UI.
+* [TypewriterJS](https://www.npmjs.com/package/typewriter-effect) for typewriter effect.
