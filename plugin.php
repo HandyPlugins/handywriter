@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       Handywriter – AI-Powered Writing Assistant for WordPress
+ * Plugin Name:       Handywriter
  * Plugin URI:        https://handyplugins.co/handywriter/
- * Description:       Handywriter Assistant. AI-powered writing assistant that can help you create content for your WordPress.
+ * Description:       Handywriter is an AI-powered writing assistant that can help you write better, faster, and more easily within WordPress.
  * Version:           1.0.1
  * Requires at least: 5.4
  * Requires PHP:      5.6
