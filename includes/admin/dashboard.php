@@ -461,7 +461,35 @@ function proofreading_callback() {
 	}
 
 	$endpoint = get_api_base_url() . 'handywriter-api/v1/proofreading';
-	$input    = sanitize_text_field( $_POST['input'] );
+
+	$input = preg_replace( '#<br[/\s]*>#si', "\n", $_POST['input'] ); // convert br to new line
+	$input = explode( '</p>', $input );
+
+	foreach ( $input as $key => $value ) {
+		$input[ $key ] = wp_strip_all_tags( $value );
+	}
+
+	$input           = implode( "\n\n", $input ); // end of the paragraph.
+	$input           = sanitize_textarea_field( $input ); // final sanitization.
+	$blocks          = parse_blocks( $_POST['input'] );
+	$is_block_editor = ( ! empty( $blocks ) && ! empty( $blocks[0]['blockName'] ) );
+
+	/**
+	 * Get all text from blocks on block editor
+	 */
+	if ( $is_block_editor ) {
+		$allowed_blocks = [ 'core/paragraph', 'core/heading' ];
+		$content        = '';
+		foreach ( $blocks as $block ) {
+			if ( in_array( $block['blockName'], $allowed_blocks, true ) ) {
+				$block_content = wp_strip_all_tags( $block['innerHTML'] );
+				if ( ! empty( $block_content ) ) {
+					$content .= wp_strip_all_tags( $block['innerHTML'] ) . PHP_EOL . PHP_EOL;
+				}
+			}
+		}
+		$input = $content;
+	}
 
 	$request = wp_remote_post(
 		$endpoint,
@@ -491,11 +519,21 @@ function proofreading_callback() {
 
 	$content = json_decode( wp_remote_retrieve_body( $request ), true );
 
+	if ( ! $content['success'] ) {
+		$err_code = ! empty( $content['data']['error_code'] ) ? $content['data']['error_code'] : '';
+
+		wp_send_json_error(
+			[
+				'message' => get_api_err_message( $err_code ),
+			]
+		);
+	}
+
 	if ( empty( $content['data'] ) ) {
 		wp_send_json_error( [ 'message' => esc_html__( 'Proofreading is not complete!', 'handywriter' ) ] );
 	}
 
-	$matches = $content['data']['matches'];
+	$matches = (array) $content['data']['matches'];
 
 	$classic_editor_html = '<div class="notice inline notice-success"><p>' . esc_html__( 'No mistakes have been detected!', 'handywriter' ) . '</p></div>';
 
