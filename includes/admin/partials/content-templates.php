@@ -110,7 +110,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span aria-hidden="true">
 								<span class="sui-icon-academy" aria-hidden="true"></span>
 								<span id="case-study-label" aria-hidden="true"><?php esc_html_e( 'Case Study', 'handywriter' ); ?></span>
-								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
 							</span>
 							<span id="case-study-description" aria-hidden="true"><?php esc_html_e( 'Create a case study about the problem you solved for a brand.', 'handywriter' ); ?></span>
 						</label>
@@ -123,12 +122,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span aria-hidden="true">
 								<span class="sui-icon-list-bullet" aria-hidden="true"></span>
 								<span id="bullet-points-label" aria-hidden="true"><?php esc_html_e( 'Bullet Points', 'handywriter' ); ?></span>
-								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
 							</span>
 							<span id="bullet-points-description" aria-hidden="true"><?php esc_html_e( 'Create a list about your product/service.', 'handywriter' ); ?></span>
 						</label>
 						</a>
 					</li>
+
+					<li>
+						<label for="content_template_product_review" class="sui-box-selector">
+							<input type="radio" value="product-review" name="content_template" data-form-heading="<?php esc_html_e( 'Product Review', 'handywriter' ); ?>" id="content_template_product_review" aria-labelledby="product-review-label" aria-describedby="product-review-description">
+							<span aria-hidden="true">
+								<span class="sui-icon-heart" aria-hidden="true"></span>
+								<span id="product-review-label" aria-hidden="true"><?php esc_html_e( 'Product Review', 'handywriter' ); ?></span>
+								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
+							</span>
+							<span id="product-review-description" aria-hidden="true"><?php esc_html_e( 'Write amazing reviews for the products you love!', 'handywriter' ); ?></span>
+						</label>
+						</a>
+					</li>
+
+					<li>
+						<label for="content_template_cold_email" class="sui-box-selector">
+							<input type="radio" value="cold-email" name="content_template" data-form-heading="<?php esc_html_e( 'Cold Email', 'handywriter' ); ?>" id="content_template_cold_email" aria-labelledby="cold-email-label" aria-describedby="cold-email-description">
+							<span aria-hidden="true">
+								<span class="sui-icon-mail" aria-hidden="true"></span>
+								<span id="cold-email-label" aria-hidden="true"><?php esc_html_e( 'Cold Email', 'handywriter' ); ?></span>
+								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
+							</span>
+							<span id="cold-email-description" aria-hidden="true"><?php esc_html_e( 'Write a cold email that gets results.', 'handywriter' ); ?></span>
+						</label>
+						</a>
+					</li>
+
+					<li>
+						<label for="content_template_poll_qa" class="sui-box-selector">
+							<input type="radio" value="poll-qa" name="content_template" data-form-heading="<?php esc_html_e( 'Poll Question and Answers', 'handywriter' ); ?>" id="content_template_poll_qa" aria-labelledby="poll-qa-label" aria-describedby="poll-qa-description">
+							<span aria-hidden="true">
+								<span class="sui-icon-question" aria-hidden="true"></span>
+								<span id="poll-qa-label" aria-hidden="true"><?php esc_html_e( 'Poll Question and Answers', 'handywriter' ); ?></span>
+								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
+							</span>
+							<span id="poll-qa-description" aria-hidden="true"><?php esc_html_e( 'Interact with your audience in a fun way.', 'handywriter' ); ?></span>
+						</label>
+						</a>
+					</li>
+
 
 				</ul>
 
@@ -363,6 +401,106 @@ if ( ! defined( 'ABSPATH' ) ) {
 						></textarea>
 					</div>
 				</fieldset>
+
+				<!-- Product Review -->
+				<fieldset id="product-review-wrapper" class="sui-hidden">
+					<div class="sui-form-field">
+						<label for="product_review_product_name" id="label-product_review_product_name" class="sui-label">
+							<?php esc_html_e( 'Product Name', 'handywriter' ); ?>
+						</label>
+						<input
+								placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
+								id="product_review_product_name"
+								name="product_review_product_name"
+								class="sui-form-control"
+								value=""
+						/>
+					</div>
+
+					<div class="sui-form-field">
+						<label for="product_review_product_description" id="label-product_review_product_description" class="sui-label"><?php esc_html_e( 'Tell us about this product', 'handywriter' ); ?></label>
+						<textarea
+							placeholder="<?php esc_html_e( 'Handywriter is a WordPress plugin that allows to create content for your website in a few clicks.', 'handywriter' ); ?>"
+							id="product_review_product_description"
+							name="product_review_product_description"
+							class="sui-form-control"
+							aria-labelledby="label-product_review_product_description"
+						></textarea>
+					</div>
+
+					<div class="sui-form-field">
+						<label for="product_review_input" id="label-product_review_input" class="sui-label">
+							<?php esc_html_e( 'What do you like about the product?', 'handywriter' ); ?>
+						</label>
+						<input
+								placeholder="<?php esc_html_e( 'boosts my productivity, helps me stay focused, easy to use, excellent support', 'handywriter' ); ?>"
+								id="product_review_input"
+								name="product_review_input"
+								class="sui-form-control"
+								value=""
+						/>
+					</div>
+
+				</fieldset>
+
+				<!-- Cold Email -->
+				<fieldset id="cold-email-wrapper" class="sui-hidden">
+					<div class="sui-form-field">
+						<label for="cold_email_for" id="label-cold_email_for" class="sui-label">
+							<?php esc_html_e( 'Name of your Product/Service', 'handywriter' ); ?>
+						</label>
+						<input
+								placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
+								id="cold_email_for"
+								name="cold_email_for"
+								class="sui-form-control"
+								value=""
+						/>
+					</div>
+
+					<div class="sui-form-field">
+						<label for="cold_email_about" id="label-cold_email_about" class="sui-label"><?php esc_html_e( 'Tell us about your product', 'handywriter' ); ?></label>
+						<textarea
+							placeholder="<?php esc_html_e( 'Handywriter is a WordPress plugin that allows to create content for your website in a few clicks.', 'handywriter' ); ?>"
+							id="cold_email_about"
+							name="cold_email_about"
+							class="sui-form-control"
+							aria-labelledby="label-cold_email_about"
+						></textarea>
+					</div>
+
+					<div class="sui-form-field">
+						<label for="cold_email_from" id="label-cold_email_from" class="sui-label">
+							<?php esc_html_e( 'Who is sending this email?', 'handywriter' ); ?>
+						</label>
+						<input
+								placeholder="<?php esc_html_e( 'Jane Doe, Product Manager', 'handywriter' ); ?>"
+								id="cold_email_from"
+								name="cold_email_from"
+								class="sui-form-control"
+								value=""
+						/>
+					</div>
+
+				</fieldset>
+
+				<!-- Poll Question & Answers -->
+				<fieldset id="poll-qa-wrapper" class="sui-hidden">
+					<div class="sui-form-field">
+						<label for="poll_qa_about" id="label-poll_qa_about" class="sui-label">
+							<?php esc_html_e( 'Topic you want to talk about', 'handywriter' ); ?>
+						</label>
+						<input
+								placeholder="<?php esc_html_e( 'Copywriting', 'handywriter' ); ?>"
+								id="poll_qa_about"
+								name="poll_qa_about"
+								class="sui-form-control"
+								value=""
+						/>
+					</div>
+				</fieldset>
+
+
 			</div>
 
 			<div class="sui-box-footer">

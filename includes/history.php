@@ -207,6 +207,30 @@ function get_content_template_title( $request_args, $results_count ) {
 	$form_data = $request_args['form_data'];
 
 	switch ( $form_data['content_template'] ) {
+		case 'product-review':
+			$title = sprintf(
+			// translators: %1$s is the number of results, %2$s is the bullet point about.
+				_n( '%1$d Product Review generated for %2$s', '%1$d Product Reviews generated for %2$s', $results_count, 'handywriter' ),
+				$results_count,
+				$form_data['product_review_product_name']
+			);
+			break;
+		case 'cold-email':
+			$title = sprintf(
+			// translators: %1$s is the number of results, %2$s is the bullet point about.
+				_n( '%1$d Cold Email generated for %2$s', '%1$d Cold Emails generated for %2$s', $results_count, 'handywriter' ),
+				$results_count,
+				$form_data['cold_email_for']
+			);
+			break;
+		case 'poll-qa':
+			$title = sprintf(
+			// translators: %1$s is the number of results, %2$s is the bullet point about.
+				_n( '%1$d Poll generated about %2$s', '%1$d Polls generated about %2$s', $results_count, 'handywriter' ),
+				$results_count,
+				$form_data['poll_qa_about']
+			);
+			break;
 		case 'bullet-points':
 			$title = sprintf(
 			// translators: %1$s is the number of results, %2$s is the bullet point about.
