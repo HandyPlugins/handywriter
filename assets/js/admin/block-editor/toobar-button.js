@@ -144,13 +144,6 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 			return icons.menuItem;
 		};
 
-		const toolbarGrammmarIcon = () => {
-			if (isGrammarCorrecting) {
-				return <Spinner />;
-			}
-			return icons.toolbarGrammar;
-		};
-
 		return (
 			<Fragment>
 				{isErrorModalOpen && (

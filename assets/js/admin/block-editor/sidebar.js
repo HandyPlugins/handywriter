@@ -635,7 +635,7 @@ const HandywriterSidebarComponent = () => {
 
 																				if (isCorrected.includes(index)) {
 																					blocks.map((block, blockIndex) => {
-																						if (block.name === 'core/paragraph') {
+																						if (block.name === 'core/paragraph' || block.name === 'core/heading') {
 																							blockContent = block.attributes.content;
 																							if (blockContent.includes(correctedSentence)) {
 																								blockContent = blockContent.replace(correctedSentence, originalSentence);
@@ -649,7 +649,7 @@ const HandywriterSidebarComponent = () => {
 																					});
 																				} else {
 																					blocks.map((block, blockIndex) => {
-																						if (block.name === 'core/paragraph') {
+																						if (block.name === 'core/paragraph' || block.name === 'core/heading') {
 																							blockContent = block.attributes.content;
 																							if (blockContent.includes(originalSentence)) {
 																								blockContent = blockContent.replace(originalSentence, correctedSentence);
