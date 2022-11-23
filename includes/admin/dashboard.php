@@ -50,6 +50,7 @@ function setup() {
 	add_action( 'wp_ajax_handywriter_create_content', __NAMESPACE__ . '\\create_content_callback' );
 	add_action( 'wp_ajax_handywriter_edit_content', __NAMESPACE__ . '\\edit_content_callback' );
 	add_action( 'wp_ajax_handywriter_check_plagiarism', __NAMESPACE__ . '\\check_plagiarism_callback' );
+	add_action( 'wp_ajax_handywriter_proofreading', __NAMESPACE__ . '\\proofreading_callback' );
 	add_action( 'wp_ajax_handywriter_usage_details', __NAMESPACE__ . '\\usage_details_callback' );
 	add_action( 'add_meta_boxes', __NAMESPACE__ . '\\register_meta_boxes' );
 	add_action( 'admin_head', __NAMESPACE__ . '\\register_classic_editor_buttons' );
@@ -445,6 +446,112 @@ function check_plagiarism_callback() {
 }
 
 /**
+ * Proofreadings callback
+ *
+ * @return void
+ * @since 1.0
+ */
+function proofreading_callback() {
+	if ( ! check_ajax_referer( 'handywriter_admin_nonce', 'nonce', false ) ) {
+		wp_send_json_error( [ 'message' => esc_html__( 'Invalid ajax nonce!', 'handywriter' ) ] );
+	}
+
+	if ( ! current_user_can( get_required_capability() ) ) {
+		wp_send_json_error( [ 'message' => esc_html__( 'You do not have permission to perform this action!', 'handywriter' ) ] );
+	}
+
+	$endpoint = get_api_base_url() . 'handywriter-api/v1/proofreading';
+	$input    = sanitize_text_field( $_POST['input'] );
+
+	$request = wp_remote_post(
+		$endpoint,
+		array(
+			'method'      => 'POST',
+			'timeout'     => 45,
+			'redirection' => 5,
+			'blocking'    => true,
+			'headers'     => array(
+				'Content-Type' => 'application/json',
+			),
+			'body'        => wp_json_encode(
+				array(
+					'license_key'  => get_license_key(),
+					'license_url'  => get_license_url(),
+					'request_from' => home_url(),
+					'input_text'   => $input,
+					'user_id'      => get_current_user_id(),
+				)
+			),
+		)
+	);
+
+	if ( is_wp_error( $request ) ) {
+		wp_send_json_error( [ 'message' => $request->get_error_message() ] );
+	}
+
+	$content = json_decode( wp_remote_retrieve_body( $request ), true );
+
+	if ( empty( $content['data'] ) ) {
+		wp_send_json_error( [ 'message' => esc_html__( 'Proofreading is not complete!', 'handywriter' ) ] );
+	}
+
+	$matches = $content['data']['matches'];
+
+	$classic_editor_html = '<div class="notice inline notice-success"><p>' . esc_html__( 'No mistakes have been detected!', 'handywriter' ) . '</p></div>';
+
+	if ( count( $matches ) > 0 ) {
+		$classic_editor_html = '<div class="notice inline notice-warning"><p>';
+		/* translators: %d: The count of proofreading suggestions */
+		$classic_editor_html .= sprintf( _n( '%d suggestion.', '%d suggestions.', count( $matches ), 'handywriter' ), count( $matches ) );
+		$classic_editor_html .= '</p></div>';
+
+		$classic_editor_html .= '<ol>';
+		foreach ( $matches as $match ) {
+
+			$text               = $match['context']['text'];
+			$highlight          = mb_substr( $text, $match['context']['offset'], $match['context']['length'] );
+			$sentence           = wp_unslash( $match['sentence'] );
+			$pre_text           = wp_unslash( mb_substr( $text, 0, $match['context']['offset'] ) );
+			$after_text         = wp_unslash( mb_substr( $text, $match['context']['offset'] + $match['context']['length'] ) );
+			$corrected_sentence = '';
+
+			if ( ! empty( $match['replacements'][0] ) && ! empty( $match['replacements'][0]['value'] ) ) {
+				$corrected_sentence = str_replace( $highlight, $match['replacements'][0]['value'], $sentence );
+			}
+
+			$classic_editor_html .= '<li>';
+			$classic_editor_html .= '<p><b>' . esc_attr( $match['message'] ) . '</b></p>';
+			$classic_editor_html .= '<p>';
+			$classic_editor_html .= $pre_text;
+			$classic_editor_html .= '<mark>';
+			$classic_editor_html .= $highlight;
+			$classic_editor_html .= '</mark>';
+			$classic_editor_html .= $after_text;
+			$classic_editor_html .= '</p>';
+
+			$classic_editor_html .= '<div class="sui-wrap proofreading-item-footer">';
+			$classic_editor_html .= '<button type="button" class="button sui-button sui-button-blue proofreader-highlight" data-sentence="' . wp_kses_post( $sentence ) . '">';
+			$classic_editor_html .= '<span class="sui-icon-eye proofreader-icon" aria-hidden="true"></span>';
+			$classic_editor_html .= '</button>';
+
+			if ( ! empty( $corrected_sentence ) ) {
+				$classic_editor_html .= '<button type="button" class="button sui-button sui-button-blue proofreader-fix" data-sentence="' . wp_kses_post( $sentence ) . '"  data-corrected-sentence="' . wp_kses_post( $corrected_sentence ) . '">';
+				$classic_editor_html .= '<span class="sui-icon-check" aria-hidden="true"></span>';
+				$classic_editor_html .= '</button>';
+				$classic_editor_html .= '</div>';
+			}
+
+			$classic_editor_html .= '</li>';
+		}
+		$classic_editor_html .= '</ol>';
+	}
+
+	$content['data']['classic_editor_result'] = $classic_editor_html;
+
+	wp_send_json_success( $content['data'] );
+}
+
+/**
  * Content Templates Page
  *
  * @return void
@@ -582,7 +689,7 @@ function register_meta_boxes() {
 		return;
 	}
 
-	$display_metabox = ( post_type_supports( $post_type, 'title' ) && post_type_supports( $post_type, 'editor' ) );
+	$display_metabox = ( post_type_supports( $post_type, 'title' ) && post_type_supports( $post_type, 'editor' ) && 'handywriter-history' !== $post_type );
 
 	/**
 	 * Determine whether show or not show post metaboxes
@@ -659,6 +766,12 @@ function render_metabox() {
 					</button>
 				</div>
 
+				<div class="sui-form-field">
+					<button type="button" id="hw-proofreading" class="sui-button sui-button-ghost sui-button-blue">
+						<?php esc_html_e( 'Proofreading', 'handywriter' ); ?>
+					</button>
+				</div>
+
 			</div>
 		</div>
 		<?php include HANDYWRITER_INC . 'admin/partials/ce-modals.php'; ?>
@@ -672,6 +785,13 @@ function render_metabox() {
 		</div>
 	</div>
 
+	<div id="proofreading-results">
+		<div class="proofreading-checking" style="display: none;">
+			<img src="<?php echo esc_url( admin_url() . 'images/spinner.gif' ); ?>" />
+		</div>
+		<div id="handywriter-proofreading-items">
+		</div>
+	</div>
 	<?php
 
 }

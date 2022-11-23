@@ -226,4 +226,4 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 	};
 }, 'withToolbarButton');
 
-wp.hooks.addFilter('editor.BlockEdit', 'handywriter/toolbar-button', withToolbarButton);
+wp.hooks.addFilter('editor.BlockEdit', 'handywriter/toolbar-button', withToolbarButton, 99);

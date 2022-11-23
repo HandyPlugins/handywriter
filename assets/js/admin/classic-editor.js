@@ -1,6 +1,7 @@
 /* global jQuery,ClipboardJS  */
 /* eslint-disable */
 const {__} = wp.i18n;
+import "mark.js/dist/jquery.mark";
 import '@wpmudev/shared-ui/dist/js/_src/modal-dialog';
 import Typewriter from 'typewriter-effect/dist/core';
 import {getTypewriterSpeed, isTinyMCEActive} from './utils';
@@ -291,6 +292,103 @@ import {getTypewriterSpeed, isTinyMCEActive} from './utils';
 		).always(function () {
 			$('.plagiarism-checking').hide();
 		});
+	});
+
+
+	$('#hw-proofreading').on('click', function (e) {
+		const ajaxurl = $('#handywriter_ajax_url').val();
+		const nonce = $('#handywriter_admin_nonce').val();
+		const currentContent = getTinymceContent();
+
+		$.post(ajaxurl, {
+				beforeSend: function () {
+					$('.proofreading-checking').show();
+				},
+				action: 'handywriter_proofreading',
+				input: currentContent,
+				nonce: nonce,
+			}, function (response) {
+				if (response.success) {
+					$('#handywriter-proofreading-items').html(response.data.classic_editor_result)
+				} else {
+					if (response.data.message) {
+						metaboxNotice(response.data.message, 'error');
+						return;
+					}
+
+					metaboxNotice(__('An error occurred', 'handywriter'), 'error');
+				}
+			}
+		).always(function () {
+			$('.proofreading-checking').hide();
+		});
+	});
+
+	$('body').on('click', '.proofreader-highlight', function (e) {
+		e.preventDefault();
+		const sentence = $(this).data('sentence');
+		/**
+		 * We can't highlight when using text mode with tinyMCE
+		 */
+		$(tinyMCE.get(wpActiveEditor).contentDocument).mark(sentence, {
+			"caseSensitive": true,
+			"accuracy": "exactly",
+			"separateWordSearch": false,
+			"iframes": true,
+		});
+	});
+
+	$('body').on('mouseout', '.proofreader-highlight', function () {
+		$(tinyMCE.get(wpActiveEditor).contentDocument).unmark();
+	});
+
+	/**
+	 * Fix the content
+	 */
+	$('body').on('click', '.proofreader-fix', function (e) {
+		e.preventDefault();
+		const sentence = $(this).data('sentence');
+		const correctedSentence = $(this).data('corrected-sentence');
+		if (isTinyMCEActive()) {
+			let content = getTinymceContent()
+			content = content.replace(sentence, correctedSentence);
+			tinyMCE.activeEditor.setContent(content, {format: 'html'});
+		} else {
+			let content = $('#content').val();
+			content = content.replace(sentence, correctedSentence);
+			$('#content').val(content);
+		}
+
+		$(this).parent().find('.proofreader-highlight').attr('disabled', 'disabled');
+		$(this).parent().find('.proofreader-icon').removeClass('sui-icon-eye').addClass('sui-icon-eye-hide');
+
+		$(this).parent().find('.proofreader-fix').removeClass('proofreader-fix').addClass('proofreader-undo-fix');
+		$(this).parent().find('.sui-icon-check').removeClass('sui-icon-check').addClass('sui-icon-undo');
+
+	});
+
+	/**
+	 * Undo the fix
+	 */
+	$('body').on('click', '.proofreader-undo-fix', function (e) {
+		e.preventDefault();
+		const sentence = $(this).data('sentence');
+		const correctedSentence = $(this).data('corrected-sentence');
+		if (isTinyMCEActive()) {
+			let content = getTinymceContent()
+			content = content.replace(correctedSentence,sentence );
+			tinyMCE.activeEditor.setContent(content, {format: 'html'});
+		} else {
+			let content = $('#content').val();
+			content = content.replace(correctedSentence,sentence);
+			$('#content').val(content);
+		}
+
+		$(this).parent().find('.proofreader-highlight').attr('disabled', false);
+		$(this).parent().find('.proofreader-icon').removeClass('sui-icon-eye-hide').addClass('sui-icon-eye');
+
+		$(this).parent().find('.proofreader-undo-fix').removeClass('proofreader-undo-fix').addClass('proofreader-fix');
+		$(this).parent().find('.sui-icon-undo').removeClass('sui-icon-undo').addClass('sui-icon-check');
 	});
 
 

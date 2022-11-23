@@ -4,6 +4,13 @@ object-assign
 @license MIT
 */
 
+/*!***************************************************
+* mark.js v8.11.1
+* https://markjs.io/
+* Copyright (c) 2014–2018, Julian Kühnel
+* Released under the MIT license https://git.io/vwTVl
+*****************************************************/
+
 /** @license React v17.0.2
  * react.production.min.js
  *

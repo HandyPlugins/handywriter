@@ -31,3 +31,14 @@ export const isTinyMCEActive = () => {
 
 	return false;
 };
+
+/**
+ * unslashit
+ *
+ * @param {string} str String to unslash
+ *
+ * @returns {string} unslashed string
+ */
+export const unslash = (str) => {
+	return str.replace(/\\/g, '');
+};

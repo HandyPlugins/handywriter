@@ -2,9 +2,10 @@
 /* eslint-disable */
 
 import Typewriter from 'typewriter-effect/dist/core';
-import {getTypewriterSpeed} from '../utils';
+import {getTypewriterSpeed, unslash} from '../utils';
 import icons from '../icons.js'
 import jQuery from 'jquery'; // eslint-disable-line import/no-unresolved
+import "mark.js/dist/jquery.mark";
 
 const {registerPlugin} = wp.plugins;
 const {__, _n, sprintf} = wp.i18n;
@@ -13,8 +14,10 @@ const {PluginSidebarMoreMenuItem, PluginSidebar} = wp.editPost;
 const {
 	Button,
 	Modal,
+	CardHeader,
 	Card,
 	CardBody,
+	CardFooter,
 	CardDivider,
 	Panel,
 	Notice,
@@ -47,6 +50,11 @@ const HandywriterSidebarComponent = () => {
 	const [isCheckingPlagiarism, setCheckingPlagiarism] = useState(false);
 	const [plagiarism, setPlagiarism] = useState('');
 	const [isPlagiarismCheckComplete, setPlagiarismCheckComplete] = useState(false);
+
+	const [isProofreading, setProofreading] = useState(false);
+	const [proofreading,setProofreadingResult] = useState('');
+	const [isProofreadingComplete, setProofreadingComplete] = useState(false);
+	const [isCorrected, setCorrected] = useState([]);
 
 	/**
 	 * Write a blog post for given title
@@ -279,6 +287,40 @@ const HandywriterSidebarComponent = () => {
 			setCheckingPlagiarism(false);
 		});
 	}
+	/**
+	 * Check plagiarism
+	 */
+	const ajaxProofreadingRequest = () => {
+		let currentContent = wp.data.select('core/editor').getEditedPostContent();
+		setProofreading(true);
+
+		jQuery.post(window.ajaxurl, {
+				action: 'handywriter_proofreading',
+				input: currentContent,
+				nonce: HandywriterAdmin.nonce,
+			}, function (response) {
+				if (response.success) {
+					setProofreadingResult(response.data);
+					setProofreadingComplete(true);
+				} else {
+					if (response.data.message) {
+						setSidebarNotice({
+							message: response.data.message,
+							status: 'error'
+						});
+						return;
+					}
+
+					setSidebarNotice({
+						message: __('An error occurred', 'handywriter'),
+						status: 'error'
+					});
+				}
+			}
+		).always(function () {
+			setProofreading(false);
+		});
+	}
 
 
 	/**
@@ -310,7 +352,6 @@ const HandywriterSidebarComponent = () => {
 			})
 			.start();
 
-		// wp.data.dispatch('core').editEntityRecord('postType', postType, postID, {title: title});
 		closeTitleModal();
 	}
 
@@ -497,6 +538,142 @@ const HandywriterSidebarComponent = () => {
 												})
 												}
 											</ol>
+										</Panel>
+									)
+									}
+
+								</Fragment>
+							}
+
+
+							<br />
+							<Panel>
+								<Button variant="secondary"
+										onClick={ajaxProofreadingRequest}
+										isBusy={isProofreading}
+										showTooltip={!isProofreading}
+										label={__('Proofreading check for this post', 'handywriter')}
+										className="handywriter-button"
+								>
+									{__('Proofreading', 'handywriter')}
+								</Button>
+							</Panel>
+							{
+								isProofreadingComplete &&
+								<Fragment>
+									{proofreading.matches.length > 0 && (
+										<Notice
+											status="warning"
+											isDismissible={false}
+										>
+											{sprintf(_n('%d suggestion.', '%d suggestions.', proofreading.matches.length, 'handywriter'), proofreading.matches.length)}
+										</Notice>
+									)
+									}
+
+									{proofreading.matches.length === 0 && (
+										<Notice
+											status="success"
+											isDismissible={false}
+										>
+											{__('No mistakes have been detected!', 'handywriter')}
+										</Notice>
+									)
+									}
+
+									{proofreading.matches.length > 0 && (
+										<Panel>
+											<ul>
+												{proofreading.matches.map((item, index) => {
+													const contextText = item.context.text;
+													const HighlightedContextText = contextText.substr(item.context.offset, item.context.length)
+													const sentenceUnslashed = unslash(item.sentence);
+													const preText = unslash(contextText.substr(0, item.context.offset))
+													const afterText = unslash(contextText.substr(item.context.offset+item.context.length))
+
+													return (
+														<li key={index}
+															className="hw-highlight-sentence"
+														>
+															<Card>
+																<CardBody>
+																	<p><b>	{item.message} </b></p>
+																	<p style={{textDecoration: isCorrected.includes(index) ? 'line-through' : '' }}>
+																		{preText}<mark>{HighlightedContextText}</mark>{afterText}
+																	</p>
+
+																</CardBody>
+																<CardFooter>
+																	<Button
+																		disabled={isCorrected.includes(index)}
+																		onClick={() => {
+																			jQuery('.wp-block-post-content').mark(sentenceUnslashed, {
+																				"caseSensitive": true,
+																				"accuracy": "exactly",
+																				"separateWordSearch": false
+																			});
+																		}}
+																		onMouseOut={() => {
+																			jQuery('.wp-block-post-content').unmark();
+																		}}
+																		className="hw-card-button"
+																		variant="secondary"
+																		icon={isCorrected.includes(index) ? "hidden" : "visibility"}
+																		showTooltip={true}
+																		label={__('Click to Highlight', 'handywriter')}
+																	>
+																	</Button>
+
+																	{item.replacements.length > 0 && (
+																		<Button
+																			onClick={() => {
+																				const blocks = wp.data.select('core/block-editor').getBlocks();
+																				let originalSentence = unslash(item.sentence)
+																				let replace = new RegExp(HighlightedContextText, "g");
+																				let correctedSentence = originalSentence.replace(replace, item.replacements[0].value);
+																				let blockContent = '';
+
+																				if (isCorrected.includes(index)) {
+																					blocks.map((block, blockIndex) => {
+																						if (block.name === 'core/paragraph') {
+																							blockContent = block.attributes.content;
+																							if (blockContent.includes(correctedSentence)) {
+																								blockContent = blockContent.replace(correctedSentence, originalSentence);
+																								wp.data.dispatch("core/block-editor").updateBlockAttributes(block.clientId, {content: blockContent});
+
+																								setCorrected((current) =>
+																									current.filter((correctedIndex) => correctedIndex !== index)
+																								);
+																							}
+																						}
+																					});
+																				} else {
+																					blocks.map((block, blockIndex) => {
+																						if (block.name === 'core/paragraph') {
+																							blockContent = block.attributes.content;
+																							if (blockContent.includes(originalSentence)) {
+																								blockContent = blockContent.replace(originalSentence, correctedSentence);
+																								wp.data.dispatch("core/block-editor").updateBlockAttributes(block.clientId, {content: blockContent});
+																								setCorrected([...isCorrected, index]);
+																							}
+																						}
+																					});
+																				}
+																			}}
+																			className="hw-card-button"
+																			variant="secondary"
+																			icon={isCorrected.includes(index) ? "image-rotate" : "yes"}
+																		>
+																		</Button>
+																	)}
+
+																</CardFooter>
+															</Card>
+														</li>
+													)
+												})
+												}
+											</ul>
 										</Panel>
 									)
 									}
