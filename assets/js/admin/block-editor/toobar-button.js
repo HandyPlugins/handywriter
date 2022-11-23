@@ -28,7 +28,6 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 		const [errorMessage, setErrorMessage] = useState('');
 
 		const [isBusy, setBusy] = useState(false);
-		const [isGrammarCorrecting, setGrammarCorrecting] = useState(false);
 
 		// If current block is not allowed
 		if (!enableToolbarButtonOnBlocks.includes(props.name)) {
@@ -138,42 +137,6 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 				});
 		};
 
-		const fixGrammar = () => {
-			setGrammarCorrecting(true);
-
-			jQuery
-				.post(
-					window.ajaxurl,
-					{
-						action: 'handywriter_edit_content',
-						input: selectedTextContent(),
-						nonce: HandywriterAdmin.nonce,
-					},
-					function (response) {
-						if (response.success) {
-							const selectedText = selectedTextContent();
-							const allText = props.attributes.content;
-							let newText = allText.replace(selectedText, response.data.content);
-
-							newText = newText.replace(
-								/(?:\r\n|\r|\n)/g,
-								"<br data-rich-text-line-break='true'>",
-							);
-							setAttributes({ content: newText });
-						} else {
-							setErrorMessage(__('An error occurred', 'handywriter'));
-							if (response.data.message) {
-								setErrorMessage(response.data.message);
-							}
-							openErrorModal();
-						}
-					},
-				)
-				.always(function () {
-					setGrammarCorrecting(false);
-				});
-		};
-
 		const toolbarIcon = () => {
 			if (isBusy) {
 				return <Spinner />;
@@ -208,15 +171,6 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 							isPressed={isBusy}
 							showTooltip={!isBusy}
 							onClick={generateMoreText}
-						/>
-						<ToolbarButton
-							icon={toolbarGrammmarIcon()}
-							label={__(
-								'Fix grammar and spelling error(s) for this selection',
-								'handywriter',
-							)}
-							isActive={isGrammarCorrecting}
-							onClick={fixGrammar}
 						/>
 					</ToolbarGroup>
 				</BlockControls>

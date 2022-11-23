@@ -837,7 +837,6 @@ function add_tinymce_plugin( $plugin_array ) {
  */
 function register_tinymce_buttons( $buttons ) {
 	array_push( $buttons, 'handywriter_button' );
-	array_push( $buttons, 'handywriter_grammar_fixer_button' );
 
 	return $buttons;
 }
