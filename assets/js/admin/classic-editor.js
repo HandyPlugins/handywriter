@@ -303,6 +303,7 @@ import {getTypewriterSpeed, isTinyMCEActive} from './utils';
 		$.post(ajaxurl, {
 				beforeSend: function () {
 					$('.proofreading-checking').show();
+					$('#handywriter-proofreading-items').empty();
 				},
 				action: 'handywriter_proofreading',
 				input: currentContent,
@@ -332,7 +333,7 @@ import {getTypewriterSpeed, isTinyMCEActive} from './utils';
 		 */
 		$(tinyMCE.get(wpActiveEditor).contentDocument).mark(sentence, {
 			"caseSensitive": true,
-			"accuracy": "exactly",
+			"accuracy": "complementary",
 			"separateWordSearch": false,
 			"iframes": true,
 		});

@@ -609,7 +609,7 @@ const HandywriterSidebarComponent = () => {
 																		onClick={() => {
 																			jQuery('.wp-block-post-content').mark(sentenceUnslashed, {
 																				"caseSensitive": true,
-																				"accuracy": "exactly",
+																				"accuracy": "complementary",
 																				"separateWordSearch": false
 																			});
 																		}}
