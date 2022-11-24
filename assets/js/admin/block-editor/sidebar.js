@@ -576,7 +576,7 @@ const HandywriterSidebarComponent = () => {
 											status="success"
 											isDismissible={false}
 										>
-											{__('No mistakes have been detected!', 'handywriter')}
+											{__('No mistake has been found!', 'handywriter')}
 										</Notice>
 									)
 									}
