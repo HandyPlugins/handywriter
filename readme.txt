@@ -33,7 +33,7 @@ __Plagiarism Check:__ Ensure the originality of your content by checking for pla
 
 __Generate More Content:__ Complete a sentence or paragraph. Handywriter will generate more content for you.
 
-__Grammar and Spelling Fix:__ Select a piece of content and check for grammar errors. It will automatically replace the content with the correct one.
+__Proofreading:__ Check for grammar and spelling errors. It's easy to fix mistakes with Handywriter.
 
 __Content Templates:__ Handywriter will create the content you need the most, right away!
 
@@ -52,6 +52,9 @@ __History:__ You can keep records of the generated results.
 - __Call to Action Ideas:__ Create a call to action that converts.
 - __Case Study:__ Create a case study about the problem you solved for a brand.
 - __Bullet Points:__ Create a list about your product/service.
+- __Product Review:__ Write amazing reviews for the products you love!
+- __Cold Email:__ Write a cold email that gets results.
+- __Poll Question and Answers:__ Interact with your audience in a fun way.
 
 
 = Contributing & Bug Report =
@@ -96,6 +99,14 @@ The plugin is free. But you will need a license to get the benefits of the plugi
 7. Content templates.
 
 == Changelog ==
+
+= 1.1 (November 24, 2022) =
+* Added proofreading
+* Removed grammar fixer
+* Added "Product review" template
+* Added "Cold Email" template
+* Added "Poll Question & Answers" template
+* Small tweaks and improvements
 
 = 1.0.1 (October 17, 2022) =
 * Remove tweet ideas template
