@@ -535,7 +535,7 @@ function proofreading_callback() {
 
 	$matches = (array) $content['data']['matches'];
 
-	$classic_editor_html = '<div class="notice inline notice-success"><p>' . esc_html__( 'No mistakes have been detected!', 'handywriter' ) . '</p></div>';
+	$classic_editor_html = '<div class="notice inline notice-success"><p>' . esc_html__( 'No mistake has been found!', 'handywriter' ) . '</p></div>';
 
 	if ( count( $matches ) > 0 ) {
 		$classic_editor_html = '<div class="notice inline notice-warning"><p>';
