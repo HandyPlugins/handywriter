@@ -198,7 +198,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Name of your product/service?', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="Handywriter"
+							placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
 							id="blog_ideas_name"
 							name="blog_ideas_name"
 							class="sui-form-control"
@@ -241,7 +241,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Name of your product/service?', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="Handywriter"
+							placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
 							id="google_ad_copy_name"
 							name="google_ad_copy_name"
 							class="sui-form-control"
@@ -269,7 +269,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Name of your product/service?', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="Handywriter"
+							placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
 							id="value_proposition_name"
 							name="value_proposition_name"
 							class="sui-form-control"
@@ -312,7 +312,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'What is your name?', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="John Snow"
+							placeholder="<?php esc_html_e( 'John Snow', 'handywriter' ); ?>"
 							id="personal_bio_name"
 							name="personal_bio_name"
 							class="sui-form-control"
@@ -325,7 +325,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<label for="personal_bio_about" id="label-personal_bio_about" class="sui-label"><?php esc_html_e( 'Tell us about yourself', 'handywriter' ); ?></label>
 
 						<textarea
-							placeholder="loves archeology, photography, and travel. Also, a big fan of the latest tech and gadgets."
+							placeholder="<?php esc_html_e( 'loves archeology, photography, and travel. Also, a big fan of the latest tech and gadgets.', 'handywriter' ); ?>"
 							id="personal_bio_about"
 							name="personal_bio_about"
 							class="sui-form-control"
@@ -340,7 +340,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Description', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="download our free PDF"
+							placeholder="<?php esc_html_e( 'download our free PDF', 'handywriter' ); ?>"
 							id="call_to_action_ideas_about"
 							name="call_to_action_ideas_about"
 							class="sui-form-control"
@@ -355,7 +355,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Case study for?', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="Acme"
+							placeholder="<?php esc_html_e( 'Acme', 'handywriter' ); ?>"
 							id="case_study_for"
 							name="case_study_for"
 							class="sui-form-control"
@@ -367,7 +367,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="sui-form-field">
 						<label for="case_study_info" id="label-case_study_info" class="sui-label"><?php esc_html_e( 'What happened?', 'handywriter' ); ?></label>
 						<textarea
-							placeholder="We helped to increase their sales by 50% in 3 months."
+							placeholder="<?php esc_html_e( 'We helped to increase their sales by 50% in 3 months.', 'handywriter' ); ?>"
 							id="case_study_info"
 							name="case_study_info"
 							class="sui-form-control"
@@ -382,7 +382,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php esc_html_e( 'Name of your product/service', 'handywriter' ); ?>
 						</label>
 						<input
-							placeholder="Acme"
+							placeholder="<?php esc_html_e( 'Handywriter', 'handywriter' ); ?>"
 							id="bullet_point_for"
 							name="bullet_point_for"
 							class="sui-form-control"
@@ -393,7 +393,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="sui-form-field">
 						<label for="bullet_point_info" id="label-bullet_point_info" class="sui-label"><?php esc_html_e( 'Tell us about your product', 'handywriter' ); ?></label>
 						<textarea
-							placeholder="We helped to increase their sales by 50% in 3 months."
+							placeholder="<?php esc_html_e( 'Handywriter is an AI-powered content generation tool for WordPress. It creates high-quality and creative content within seconds.', 'handywriter' ); ?>"
 							id="bullet_point_info"
 							name="bullet_point_info"
 							class="sui-form-control"
