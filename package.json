@@ -1,6 +1,6 @@
 {
   "name": "handywriter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "start": "npm run watch",
     "watchhot": "10up-toolkit watch --port=5010 --hot",
@@ -18,8 +18,8 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@wpmudev/shared-ui": "^2.12.13",
-    "10up-toolkit": "^4.1",
+    "@wpmudev/shared-ui": "^2.12.18",
+    "10up-toolkit": "^5.1",
     "mark.js": "^8.11.1",
     "typewriter-effect": "^2.18.0"
   },
@@ -33,6 +33,6 @@
       "classic-editor": "./assets/js/admin/classic-editor.js",
       "classic-editor-plugin": "./assets/js/admin/classic-editor-plugin.js"
     },
-    "wpDependencyExternals": false
+    "wpDependencyExternals": true
   }
 }
