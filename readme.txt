@@ -77,7 +77,7 @@ In order to help you to create high quality content, Handywriter has a built-in 
 
 = What languages does it support? =
 
-Only English for now.
+It supports 100+ languages. You can set the language under the settings page. The quality of the results might be different for those other than English (because of the training set of the AI). However, it performs well for the commonly used languages.
 
 = Does it work with the classic editor? =
 
