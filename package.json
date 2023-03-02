@@ -11,7 +11,7 @@
     "lint-style": "10up-toolkit lint-style",
     "test": "10up-toolkit test-unit-jest",
     "clean-dist": "rm -rf ./dist",
-    "make-pot": "wp i18n make-pot . languages/handywriter.pot --include='includes/,assets/js/' --package-name=handywriter",
+    "make-pot": "wp i18n make-pot . languages/handywriter.pot --domain='handywriter'",
     "build-release": "npm install --production=false && composer install && npm run build && npm run make-pot"
   },
   "engines": {
