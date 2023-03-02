@@ -132,6 +132,32 @@ $license_info = get_license_info();
 							</div>
 						</div>
 					</div>
+
+					<div class="sui-box-settings-row">
+						<div class="sui-box-settings-col-1">
+							<span class="sui-settings-label" id="hw_language"><?php esc_html_e( 'Language', 'handywriter' ); ?></span>
+						</div>
+
+						<?php
+						$languages        = \Handywriter\Utils\get_available_languages();
+						$current_language = ! empty( $settings['language'] ) ? $settings['language'] : get_locale();
+						?>
+						<div class="sui-box-settings-col-2">
+							<div class="sui-form-field">
+								<select name="language" id="select-single-default" class="sui-select">
+									<?php foreach ( $languages as $lang_code => $language ) : ?>
+										<option <?php selected( $lang_code, $current_language ); ?> value="<?php echo esc_attr( $lang_code ); ?>">
+											<?php echo esc_attr( $language['native_name'] ); ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<span class="sui-description"><?php esc_html_e( 'The language of content to be produced by AI.', 'handywriter' ); ?></span>
+							</div>
+						</div>
+
+					</div>
+
+
 				<?php endif; ?>
 				<div class="sui-box-settings-row">
 					<div class="sui-box-settings-col-1">

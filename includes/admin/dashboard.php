@@ -172,6 +172,7 @@ function create_content_callback() {
 	$endpoint     = get_api_base_url() . 'handywriter-api/v1/generate';
 	$input        = sanitize_text_field( $_POST['input'] );
 	$content_type = ( isset( $_POST['content_type'] ) ? sanitize_text_field( $_POST['content_type'] ) : '' );
+	$settings     = \Handywriter\Utils\get_settings();
 
 	$request = wp_remote_post(
 		$endpoint,
@@ -192,6 +193,7 @@ function create_content_callback() {
 					'input_text'     => $input,
 					'content_type'   => $content_type,
 					'request_source' => 'editor',
+					'language'       => $settings['language'],
 					'user_id'        => get_current_user_id(),
 				)
 			),
@@ -666,6 +668,7 @@ function content_template_create_content_callback() {
 	}
 
 	$endpoint = get_api_base_url() . 'handywriter-api/v1/content-template';
+	$settings = \Handywriter\Utils\get_settings();
 
 	$request = wp_remote_post(
 		$endpoint,
@@ -686,7 +689,7 @@ function content_template_create_content_callback() {
 					'content_template' => $post_data['content_template'],
 					'request_source'   => 'content_template',
 					'user_id'          => get_current_user_id(),
-
+					'language'         => $settings['language'],
 				)
 			),
 		)
@@ -942,6 +945,7 @@ function save_settings() {
 	if ( wp_verify_nonce( $nonce, 'handywriter_settings' ) ) {
 		$settings                        = [];
 		$settings['role']                = sanitize_text_field( filter_input( INPUT_POST, 'role', FILTER_SANITIZE_STRING ) );
+		$settings['language']            = sanitize_text_field( filter_input( INPUT_POST, 'language', FILTER_SANITIZE_STRING ) );
 		$settings['max_results']         = absint( filter_input( INPUT_POST, 'max_results', FILTER_SANITIZE_STRING ) );
 		$settings['enable_history']      = ! empty( $_POST['enable_history'] );
 		$settings['history_records_ttl'] = absint( $_POST['history_records_ttl'] );
