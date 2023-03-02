@@ -48,7 +48,6 @@ function setup() {
 	add_filter( 'admin_body_class', __NAMESPACE__ . '\\add_sui_admin_body_class' );
 	add_action( 'wp_ajax_handywriter_content_template_create_content', __NAMESPACE__ . '\\content_template_create_content_callback' );
 	add_action( 'wp_ajax_handywriter_create_content', __NAMESPACE__ . '\\create_content_callback' );
-	add_action( 'wp_ajax_handywriter_edit_content', __NAMESPACE__ . '\\edit_content_callback' );
 	add_action( 'wp_ajax_handywriter_check_plagiarism', __NAMESPACE__ . '\\check_plagiarism_callback' );
 	add_action( 'wp_ajax_handywriter_proofreading', __NAMESPACE__ . '\\proofreading_callback' );
 	add_action( 'wp_ajax_handywriter_usage_details', __NAMESPACE__ . '\\usage_details_callback' );
@@ -279,85 +278,6 @@ function create_content_callback() {
 	wp_send_json_success( $content['data'] );
 	exit;
 }
-
-/**
- * Edit given content callback
- *
- * @return void
- * @since 1.0
- */
-function edit_content_callback() {
-	if ( ! check_ajax_referer( 'handywriter_admin_nonce', 'nonce', false ) ) {
-		wp_send_json_error( [ 'message' => esc_html__( 'Invalid ajax nonce!', 'handywriter' ) ] );
-	}
-
-	if ( ! current_user_can( get_required_capability() ) ) {
-		wp_send_json_error( [ 'message' => esc_html__( 'You do not have permission to perform this action!', 'handywriter' ) ] );
-	}
-
-	$endpoint = get_api_base_url() . 'handywriter-api/v1/edits';
-	$input    = sanitize_text_field( $_POST['input'] );
-
-	$request = wp_remote_post(
-		$endpoint,
-		array(
-			'method'      => 'POST',
-			'timeout'     => 45,
-			'redirection' => 5,
-			'blocking'    => true,
-			'headers'     => array(
-				'Content-Type' => 'application/json',
-			),
-			'body'        => wp_json_encode(
-				array(
-					'license_key'    => get_license_key(),
-					'max_results'    => get_max_results(),
-					'license_url'    => get_license_url(),
-					'request_from'   => home_url(),
-					'input_text'     => $input,
-					'request_source' => 'editor',
-					'user_id'        => get_current_user_id(),
-				)
-			),
-		)
-	);
-
-	if ( is_wp_error( $request ) ) {
-		wp_send_json_error(
-			[
-				'message' => $request->get_error_message(),
-			]
-		);
-	}
-
-	$content = json_decode( wp_remote_retrieve_body( $request ), true );
-
-	if ( ! $content['success'] ) {
-		$err_code = ! empty( $content['data']['error_code'] ) ? $content['data']['error_code'] : '';
-
-		wp_send_json_error(
-			[
-				'message' => get_api_err_message( $err_code ),
-			]
-		);
-	}
-
-	if ( empty( $content['data'] ) ) {
-		wp_send_json_error(
-			[
-				'message' => esc_html__( 'The content could not edited!', 'handywriter' ),
-			]
-		);
-	}
-
-	if ( $content['data']['content'] ) {
-		$content['data']['content'] = array_values( $content['data']['content'] ); // reindex array
-	}
-
-	wp_send_json_success( $content['data'] );
-	exit;
-}
-
 
 /**
  * Create content callback
