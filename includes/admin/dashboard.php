@@ -941,12 +941,12 @@ function save_settings() {
 		return;
 	}
 
-	$nonce = filter_input( INPUT_POST, 'handywriter_settings', FILTER_SANITIZE_STRING );
+	$nonce = filter_input( INPUT_POST, 'handywriter_settings', FILTER_SANITIZE_SPECIAL_CHARS );
 	if ( wp_verify_nonce( $nonce, 'handywriter_settings' ) ) {
 		$settings                        = [];
-		$settings['role']                = sanitize_text_field( filter_input( INPUT_POST, 'role', FILTER_SANITIZE_STRING ) );
-		$settings['language']            = sanitize_text_field( filter_input( INPUT_POST, 'language', FILTER_SANITIZE_STRING ) );
-		$settings['max_results']         = absint( filter_input( INPUT_POST, 'max_results', FILTER_SANITIZE_STRING ) );
+		$settings['role']                = sanitize_text_field( filter_input( INPUT_POST, 'role', FILTER_SANITIZE_SPECIAL_CHARS ) );
+		$settings['language']            = sanitize_text_field( filter_input( INPUT_POST, 'language', FILTER_SANITIZE_SPECIAL_CHARS ) );
+		$settings['max_results']         = absint( filter_input( INPUT_POST, 'max_results', FILTER_SANITIZE_SPECIAL_CHARS ) );
 		$settings['enable_history']      = ! empty( $_POST['enable_history'] );
 		$settings['history_records_ttl'] = absint( $_POST['history_records_ttl'] );
 
