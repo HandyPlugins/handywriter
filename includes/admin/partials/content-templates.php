@@ -134,7 +134,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span aria-hidden="true">
 								<span class="sui-icon-heart" aria-hidden="true"></span>
 								<span id="product-review-label" aria-hidden="true"><?php esc_html_e( 'Product Review', 'handywriter' ); ?></span>
-								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
 							</span>
 							<span id="product-review-description" aria-hidden="true"><?php esc_html_e( 'Write amazing reviews for the products you love!', 'handywriter' ); ?></span>
 						</label>
@@ -147,7 +146,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<span aria-hidden="true">
 								<span class="sui-icon-mail" aria-hidden="true"></span>
 								<span id="cold-email-label" aria-hidden="true"><?php esc_html_e( 'Cold Email', 'handywriter' ); ?></span>
-								<span class="sui-tag sui-tag-beta"><?php esc_html_e( 'Beta', 'handywriter' ); ?></span>
 							</span>
 							<span id="cold-email-description" aria-hidden="true"><?php esc_html_e( 'Write a cold email that gets results.', 'handywriter' ); ?></span>
 						</label>
