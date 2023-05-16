@@ -878,7 +878,14 @@ function save_settings() {
 
 		add_settings_error( SETTING_OPTION, 'handywriter', esc_html__( 'Settings saved.', 'handywriter' ), 'success' );
 
-		$license_key = sanitize_text_field( filter_input( INPUT_POST, 'license_key' ) );
+		$license_key         = sanitize_text_field( filter_input( INPUT_POST, 'license_key' ) );
+		$current_license_key = \Handywriter\Utils\mask_string( $license_key, 3 );
+		$old_license_key     = \Handywriter\Utils\mask_string( get_license_key(), 3 );
+
+		if ( $current_license_key === $old_license_key ) {
+			$license_key = get_license_key();
+		}
+
 		if ( HANDYWRITER_IS_NETWORK ) {
 			update_site_option( LICENSE_KEY_OPTION, $license_key );
 		} else {

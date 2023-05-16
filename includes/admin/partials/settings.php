@@ -45,7 +45,8 @@ $license_info = get_license_info();
 									class="sui-form-control sui-field-has-suffix"
 									aria-labelledby="license_key_label"
 									type="text"
-									value="<?php echo esc_attr( get_license_key() ); ?>"
+									value="<?php echo esc_attr( \Handywriter\Utils\mask_string( get_license_key(), 3 ) ); ?>"
+									autocomplete="off"
 								/>
 								<span class="sui-field-suffix">
 									<?php if ( false !== $license_info && 'valid' === $license_info['license_status'] ) : ?>

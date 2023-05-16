@@ -1121,3 +1121,23 @@ function get_available_languages() {
 
 	return (array) apply_filters( 'handywriter_available_languages', $languages );
 }
+
+
+/**
+ * Mask given string
+ *
+ * @param string $input_string  String
+ * @param int    $unmask_length The lenght of unmask
+ *
+ * @return string
+ * @since 1.2.1
+ */
+function mask_string( $input_string, $unmask_length ) {
+	$output_string = substr( $input_string, 0, $unmask_length );
+
+	if ( strlen( $input_string ) > $unmask_length ) {
+		$output_string .= str_repeat( '*', strlen( $input_string ) - $unmask_length );
+	}
+
+	return $output_string;
+}
