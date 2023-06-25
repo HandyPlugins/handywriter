@@ -26,7 +26,7 @@ const HISTORY_CRON_HOOK = 'handywriter_history_scheduled_delete';
 // urls
 const DOCS_URL    = 'https://handyplugins.co/handywriter/docs/';
 const BLOG_URL    = 'https://handyplugins.co/blog/';
-const FAQ_URL     = 'https://handyplugins.co/handywriter/#faq';
+const FAQ_URL     = 'https://handyplugins.co/handywriter/pricing/#faq';
 const SUPPORT_URL = 'https://wordpress.org/support/plugin/handywriter/';
 const GITHUB_URL  = 'https://github.com/HandyPlugins';
 const TWITTER_URL = 'https://twitter.com/HandyPlugins';
