@@ -202,7 +202,7 @@ $license_info = get_license_info();
 									>
 
 									<span class="sui-toggle-slider" aria-hidden="true"></span>
-									<span id="enable_history_label" class="sui-toggle-label"><?php esc_html_e( 'Keep records of AI generated contents.', 'powered-cache' ); ?></span>
+									<span id="enable_history_label" class="sui-toggle-label"><?php esc_html_e( 'Keep records of AI generated contents.', 'handywriter' ); ?></span>
 								</label>
 							</div>
 
