@@ -4,7 +4,7 @@ Tags:              content writing, AI, GPT, copywriting, copywriter
 Requires at least: 5.4
 Tested up to:      6.3
 Requires PHP:      5.6
-Stable tag:        1.2.1
+Stable tag:        1.2.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Donate link:       https://handyplugins.co/donate/
@@ -106,10 +106,16 @@ The plugin is free. But you will need a license to get the benefits of the plugi
 7. Content templates.
 
 == Changelog ==
+
+= 1.2.2 (July 22, 2023) =
+* Fixed a wrong textdomain
+* Fixed faq url
+* Updated: UI package
+* Tested with WP 6.3
+
 = 1.2.1 (May 16, 2023) =
 * Mask the license key on the settings page
 * Small tweaks and improvements
-
 
 = 1.2 (March 02, 2023) =
 * Added multi-language support.
