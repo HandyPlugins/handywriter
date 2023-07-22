@@ -2,11 +2,12 @@
 Contributors:      handyplugins, m_uysl
 Tags:              content writing, AI, GPT, copywriting, copywriter
 Requires at least: 5.4
-Tested up to:      6.2
+Tested up to:      6.3
 Requires PHP:      5.6
 Stable tag:        1.2.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Donate link:       https://handyplugins.co/donate/
 
 AI-Powered writing assistant for WordPress. Create unique content effortlessly.
 
@@ -59,6 +60,12 @@ __History:__ You can keep records of the generated results.
 
 = Contributing & Bug Report =
 Bug reports and pull requests are welcome on [GitHub](https://github.com/HandyPlugins/handywriter).
+
+__If you like Handywriter, then consider checking out our other projects:__
+
+* <a href="https://handyplugins.co/magic-login-pro/" rel="friend">Magic Login Pro</a> – Easy, secure, and passwordless authentication for WordPress.
+* <a href="https://handyplugins.co/easy-text-to-speech/" rel="friend">Easy Text-to-Speech for WordPress</a> – Transform your textual content into high-quality synthesized speech with Amazon Polly.
+* <a href="https://handyplugins.co/paddlepress-pro/" rel="friend">PaddlePress PRO</a> – Paddle Plugin for WordPress
 
 = Documentation =
 Our documentation can be found on [https://handyplugins.co/handywriter/docs/](https://handyplugins.co/handywriter/docs/)
