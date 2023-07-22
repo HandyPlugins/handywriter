@@ -1,6 +1,6 @@
 {
   "name": "handywriter",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "scripts": {
     "start": "npm run watch",
     "watchhot": "10up-toolkit watch --port=5010 --hot",
@@ -18,7 +18,7 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@wpmudev/shared-ui": "^2.12.18",
+    "@wpmudev/shared-ui": "^2.12.20",
     "10up-toolkit": "^5.1",
     "mark.js": "^8.11.1",
     "typewriter-effect": "^2.18.0"
