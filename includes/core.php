@@ -81,7 +81,7 @@ function script_url( $script, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in HandyWriter script loader.' );
 	}
 
-	return HANDYWRITER_URL . "dist/js/${script}.js";
+	return HANDYWRITER_URL . "dist/js/{$script}.js";
 
 }
 
@@ -99,7 +99,7 @@ function style_url( $stylesheet, $context ) {
 		return new WP_Error( 'invalid_enqueue_context', 'Invalid $context specified in HandyWriter stylesheet loader.' );
 	}
 
-	return HANDYWRITER_URL . "dist/css/${stylesheet}.css";
+	return HANDYWRITER_URL . "dist/css/{$stylesheet}.css";
 }
 
 /**
