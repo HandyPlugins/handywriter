@@ -1127,7 +1127,7 @@ function get_available_languages() {
  * Mask given string
  *
  * @param string $input_string  String
- * @param int    $unmask_length The lenght of unmask
+ * @param int    $unmask_length The length of unmask
  *
  * @return string
  * @since 1.2.1
