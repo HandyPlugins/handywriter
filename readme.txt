@@ -2,7 +2,7 @@
 Contributors:      handyplugins, m_uysl
 Tags:              content writing, AI, GPT, copywriting, copywriter
 Requires at least: 5.4
-Tested up to:      6.3
+Tested up to:      6.4
 Requires PHP:      5.6
 Stable tag:        1.2.2
 License:           GPLv2 or later
@@ -66,6 +66,7 @@ __If you like Handywriter, then consider checking out our other projects:__
 * <a href="https://handyplugins.co/magic-login-pro/" rel="friend">Magic Login Pro</a> – Easy, secure, and passwordless authentication for WordPress.
 * <a href="https://handyplugins.co/easy-text-to-speech/" rel="friend">Easy Text-to-Speech for WordPress</a> – Transform your textual content into high-quality synthesized speech with Amazon Polly.
 * <a href="https://handyplugins.co/paddlepress-pro/" rel="friend">PaddlePress PRO</a> – Paddle Plugin for WordPress
+* <a href="https://poweredcache.com/" rel="friend">Powered Cache</a> – Caching and Optimization for WordPress – Easily Improve PageSpeed & Web Vitals Score
 
 = Documentation =
 Our documentation can be found on [https://handyplugins.co/handywriter/docs/](https://handyplugins.co/handywriter/docs/)
@@ -79,8 +80,8 @@ Our documentation can be found on [https://handyplugins.co/handywriter/docs/](ht
 
 = Is the copy generated original and plagiarism free? =
 
-There is no way to guaranteed the originality of the content. Handywriter generates copies based on your input criteria.
-In order to help you to create high quality content, Handywriter has a built-in plagiarsm checker, just check your content before publishing to ensure the originality.
+There is no way to guarantee the originality of the content. Handywriter generates copies based on your input criteria.
+In order to help you to create high quality content, Handywriter has a built-in plagiarism checker, just check your content before publishing to ensure the originality.
 
 = What languages does it support? =
 
