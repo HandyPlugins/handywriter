@@ -122,7 +122,7 @@ $license_info = get_license_info();
 						?>
 						<div class="sui-box-settings-col-2">
 							<div class="sui-form-field">
-								<select name="role" id="select-single-default" class="sui-select">
+								<select name="role" id="select-user-role" class="sui-select">
 									<?php foreach ( $roles as $role => $role_name ) : ?>
 										<option <?php selected( $role, $settings['role'] ); ?> value="<?php echo esc_attr( $role ); ?>">
 											<?php echo esc_attr( translate_user_role( $role_name ) ); ?>
@@ -145,7 +145,7 @@ $license_info = get_license_info();
 						?>
 						<div class="sui-box-settings-col-2">
 							<div class="sui-form-field">
-								<select name="language" id="select-single-default" class="sui-select">
+								<select name="language" id="content-language" class="sui-select">
 									<?php foreach ( $languages as $lang_code => $language ) : ?>
 										<option <?php selected( $lang_code, $current_language ); ?> value="<?php echo esc_attr( $lang_code ); ?>">
 											<?php echo esc_attr( $language['native_name'] ); ?>

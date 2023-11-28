@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<span class="sui-icon-blog" aria-hidden="true"></span>
 								<span id="blog-ideas-label" aria-hidden="true"><?php esc_html_e( 'Blog Ideas', 'handywriter' ); ?></span>
 							</span>
-							<span id="blog_ideas_description" aria-hidden="true"><?php esc_html_e( 'Find a next blog idea', 'handywriter' ); ?></span>
+							<span aria-hidden="true"><?php esc_html_e( 'Find a next blog idea', 'handywriter' ); ?></span>
 						</label>
 					</li>
 
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<span class="sui-icon dashicons dashicons-cart"></span>
 								<span id="product-descriptions-label" aria-hidden="true"><?php esc_html_e( 'E-commerce Product Descriptions', 'handywriter' ); ?></span>
 							</span>
-							<span id="product_descriptions_info" aria-hidden="true"><?php esc_html_e( 'Give more details about your products.', 'handywriter' ); ?></span>
+							<span aria-hidden="true"><?php esc_html_e( 'Give more details about your products.', 'handywriter' ); ?></span>
 						</label>
 					</li>
 
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<span class="sui-icon dashicons dashicons-google"></span>
 								<span id="google-ad-copy-label" aria-hidden="true"><?php esc_html_e( 'Google Ad Copy', 'handywriter' ); ?></span>
 							</span>
-							<span id="google_ad_copy_description" aria-hidden="true"><?php esc_html_e( 'Generate an ad for your product or promotional campaign.', 'handywriter' ); ?></span>
+							<span aria-hidden="true"><?php esc_html_e( 'Generate an ad for your product or promotional campaign.', 'handywriter' ); ?></span>
 						</label>
 					</li>
 
@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<span class="sui-icon-send" aria-hidden="true"></span>
 								<span id="value-proposition-label" aria-hidden="true"><?php esc_html_e( 'Value Proposition', 'handywriter' ); ?></span>
 							</span>
-							<span id="value_proposition_description" aria-hidden="true"><?php esc_html_e( 'Create a value proposition statement for your product, or service.', 'handywriter' ); ?></span>
+							<span aria-hidden="true"><?php esc_html_e( 'Create a value proposition statement for your product, or service.', 'handywriter' ); ?></span>
 						</label>
 					</li>
 
