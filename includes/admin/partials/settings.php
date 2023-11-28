@@ -227,6 +227,33 @@ $license_info = get_license_info();
 						</div>
 					</div>
 				</div>
+				<div class="sui-box-settings-row">
+					<div class="sui-box-settings-col-1">
+						<span class="sui-settings-label" id="role_key"><?php esc_html_e( 'Enable Typewriter', 'handywriter' ); ?></span>
+					</div>
+
+					<div class="sui-box-settings-col-2">
+						<div class="sui-form-field">
+							<div class="sui-row">
+								<label for="enable_typewriter" class="sui-toggle">
+									<input
+										type="checkbox"
+										id="enable_typewriter"
+										name="enable_typewriter"
+										aria-labelledby="enable_typewriter_label"
+										aria-describedby="enable_typewriter_description"
+										value="1"
+										<?php checked( 1, $settings['enable_typewriter'] ); ?>
+									>
+
+									<span class="sui-toggle-slider" aria-hidden="true"></span>
+									<span id="enable_typewriter_label" class="sui-toggle-label"><?php esc_html_e( 'Enable Typewriter Effect in WordPress editor.', 'handywriter' ); ?></span>
+								</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
 
 			</div>
 

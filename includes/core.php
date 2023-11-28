@@ -160,8 +160,11 @@ function admin_scripts( $hook ) {
 			true
 		);
 
+		$settings = \Handywriter\Utils\get_settings();
+
 		$args = [
-			'nonce' => wp_create_nonce( 'handywriter_admin_nonce' ),
+			'enableTypewriter' => boolval($settings['enable_typewriter']),
+			'nonce'            => wp_create_nonce( 'handywriter_admin_nonce' ),
 		];
 
 		wp_localize_script(

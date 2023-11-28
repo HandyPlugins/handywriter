@@ -81,6 +81,7 @@ function get_settings() {
 		'max_results'         => 3,
 		'enable_history'      => false,
 		'history_records_ttl' => 30,
+		'enable_typewriter'   => true,
 	];
 
 	if ( HANDYWRITER_IS_NETWORK ) {

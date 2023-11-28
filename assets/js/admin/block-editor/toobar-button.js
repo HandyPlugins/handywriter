@@ -91,36 +91,40 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 								);
 							}
 
-							const activeText = window.getSelection().toString();
-							let typingContent = selectedText;
+							if (HandywriterAdmin.enableTypewriter) {
+								const activeText = window.getSelection().toString();
+								let typingContent = selectedText;
 
-							if (activeText) {
-								const activeTextStart = blockContent.indexOf(activeText);
-								const activeTextEnd = activeTextStart + activeText.length;
-								typingContent = blockContent.substring(0, activeTextEnd);
-								endingPart = blockContent.substring(activeTextEnd);
+								if (activeText) {
+									const activeTextStart = blockContent.indexOf(activeText);
+									const activeTextEnd = activeTextStart + activeText.length;
+									typingContent = blockContent.substring(0, activeTextEnd);
+									endingPart = blockContent.substring(activeTextEnd);
+								}
+
+								if (content_type === 'suggest_heading') {
+									typingContent = '';
+								}
+
+								const typewriter = new Typewriter(null, {
+									delay: getTypewriterSpeed(appendedText.length),
+									onCreateTextNode(character) {
+										typingContent += character;
+										const tempContent = typingContent + endingPart;
+										setAttributes({content: tempContent});
+										return null;
+									},
+								});
+
+								typewriter
+									.typeString(appendedText)
+									.callFunction(() => {
+										setAttributes({content: finalContent});
+									})
+									.start();
+							} else {
+								setAttributes({content: finalContent});
 							}
-
-							if (content_type === 'suggest_heading') {
-								typingContent = '';
-							}
-
-							const typewriter = new Typewriter(null, {
-								delay: getTypewriterSpeed(appendedText.length),
-								onCreateTextNode(character) {
-									typingContent += character;
-									const tempContent = typingContent + endingPart;
-									setAttributes({ content: tempContent });
-									return null;
-								},
-							});
-
-							typewriter
-								.typeString(appendedText)
-								.callFunction(() => {
-									setAttributes({ content: finalContent });
-								})
-								.start();
 
 							setBusy(false);
 						} else {

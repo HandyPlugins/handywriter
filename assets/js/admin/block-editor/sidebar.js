@@ -100,25 +100,29 @@ const HandywriterSidebarComponent = () => {
 						wp.data.dispatch("core/block-editor").insertBlocks(postBlock);
 					}
 
-					let typingContent = '';
-					const createBlogPostNode = function (character) {
-						typingContent += character;
-						wp.data.dispatch("core/block-editor").updateBlockAttributes(postBlock.clientId, {content: typingContent});
-						return null;
+					if (HandywriterAdmin.enableTypewriter) {
+						let typingContent = '';
+						const createBlogPostNode = function (character) {
+							typingContent += character;
+							wp.data.dispatch("core/block-editor").updateBlockAttributes(postBlock.clientId, {content: typingContent});
+							return null;
+						}
+
+						let typewriter = new Typewriter(null, {
+							delay: getTypewriterSpeed(blogPost.length),
+							onCreateTextNode: createBlogPostNode,
+						});
+
+						typewriter
+							.typeString(blogPost)
+							.callFunction(() => {
+								// setup content with line breaks
+								wp.data.dispatch("core/block-editor").updateBlockAttributes(postBlock.clientId, {content: blogPost});
+							})
+							.start();
+					} else {
+						wp.data.dispatch("core/block-editor").updateBlockAttributes(postBlock.clientId, {content: blogPost});
 					}
-
-					let typewriter = new Typewriter(null, {
-						delay: getTypewriterSpeed(blogPost.length),
-						onCreateTextNode: createBlogPostNode,
-					});
-
-					typewriter
-						.typeString(blogPost)
-						.callFunction(() => {
-							// setup content with line breaks
-							wp.data.dispatch("core/block-editor").updateBlockAttributes(postBlock.clientId, {content: blogPost});
-						})
-						.start();
 
 				} else if (response.data.message) {
 					setSidebarNotice({
@@ -331,26 +335,31 @@ const HandywriterSidebarComponent = () => {
 		const postType = wp.data.select('core/editor').getCurrentPostType();
 		const postID = wp.data.select('core/editor').getCurrentPostId();
 
-		var input = jQuery('.wp-block-post-title');
-		input.text(''); // reset
-		var customNodeCreator = function (character) {
-			// Add character to input placeholder
-			input.text(input.text() + character)
-			// Return null to skip internal adding of dom node
-			return null;
+		if (HandywriterAdmin.enableTypewriter) {
+			var input = jQuery('.wp-block-post-title');
+			input.text(''); // reset
+			var customNodeCreator = function (character) {
+				// Add character to input placeholder
+				input.text(input.text() + character)
+				// Return null to skip internal adding of dom node
+				return null;
+			}
+
+			let typewriter = new Typewriter(null, {
+				delay: getTypewriterSpeed(title.length),
+				onCreateTextNode: customNodeCreator,
+			});
+
+			typewriter
+				.typeString(title)
+				.callFunction(() => {
+					wp.data.dispatch('core').editEntityRecord('postType', postType, postID, {title: title}); // set actual title
+				})
+				.start();
+
+		} else {
+			wp.data.dispatch('core').editEntityRecord('postType', postType, postID, {title: title});
 		}
-
-		let typewriter = new Typewriter(null, {
-			delay: getTypewriterSpeed(title.length),
-			onCreateTextNode: customNodeCreator,
-		});
-
-		typewriter
-			.typeString(title)
-			.callFunction(() => {
-				wp.data.dispatch('core').editEntityRecord('postType', postType, postID, {title: title}); // set actual title
-			})
-			.start();
 
 		closeTitleModal();
 	}
@@ -369,26 +378,29 @@ const HandywriterSidebarComponent = () => {
 		})
 
 		wp.data.dispatch("core/block-editor").insertBlocks(summaryBlock);
+		if (HandywriterAdmin.enableTypewriter) {
+			let typingContent = '';
+			const createSummaryNode = function (character) {
+				typingContent += character;
+				wp.data.dispatch("core/block-editor").updateBlockAttributes(summaryBlock.clientId, {content: typingContent});
+				return null;
+			}
 
-		let typingContent = '';
-		const createSummaryNode = function (character) {
-			typingContent += character;
-			wp.data.dispatch("core/block-editor").updateBlockAttributes(summaryBlock.clientId, {content: typingContent});
-			return null;
+			let typewriter = new Typewriter(null, {
+				delay: getTypewriterSpeed(summary.length),
+				onCreateTextNode: createSummaryNode,
+			});
+
+
+			typewriter
+				.typeString(summary)
+				.callFunction(() => {
+					wp.data.dispatch("core/block-editor").updateBlockAttributes(summaryBlock.clientId, {content: summary});
+				})
+				.start();
+		} else {
+			wp.data.dispatch("core/block-editor").updateBlockAttributes(summaryBlock.clientId, {content: summary});
 		}
-
-		let typewriter = new Typewriter(null, {
-			delay: getTypewriterSpeed(summary.length),
-			onCreateTextNode: createSummaryNode,
-		});
-
-
-		typewriter
-			.typeString(summary)
-			.callFunction(() => {
-				wp.data.dispatch("core/block-editor").updateBlockAttributes(summaryBlock.clientId, {content: summary});
-			})
-			.start();
 	}
 
 	const clipboard = new ClipboardJS('.copy-to-clipboard');

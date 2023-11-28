@@ -869,6 +869,7 @@ function save_settings() {
 		$settings['max_results']         = absint( filter_input( INPUT_POST, 'max_results', FILTER_SANITIZE_SPECIAL_CHARS ) );
 		$settings['enable_history']      = ! empty( $_POST['enable_history'] );
 		$settings['history_records_ttl'] = absint( $_POST['history_records_ttl'] );
+		$settings['enable_typewriter']   = ! empty( $_POST['enable_typewriter'] );
 
 		if ( HANDYWRITER_IS_NETWORK ) {
 			update_site_option( SETTING_OPTION, $settings );

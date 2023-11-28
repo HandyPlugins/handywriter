@@ -66,46 +66,55 @@ import {getTypewriterSpeed, isTinyMCEActive} from './utils';
 					let tinyMceActive = isTinyMCEActive();
 					let blogPost = response.data.content[0];
 					let blogPostArr = blogPost.split(/(?:\r\n|\r|\n)/g);
-					let typingContent = '';
 
-					if (tinyMceActive) {
-						typingContent = getTinymceContent();
-					} else {
-						typingContent = $('#content').val();
-					}
+					if (HandywriterAdmin.enableTypewriter) {
+						let typingContent = '';
 
-					const blogPostTextNode = function (character) {
-						typingContent += character;
 						if (tinyMceActive) {
-							tinyMCE.activeEditor.setContent(typingContent, {format: 'html'});
-							// $('#content_ifr').contents().find('body').append(character);
+							typingContent = getTinymceContent();
 						} else {
-							$('#content').val(typingContent);
+							typingContent = $('#content').val();
 						}
-					}
 
-					let typewriter = new Typewriter(null, {
-						delay: getTypewriterSpeed(blogPost.length),
-						onCreateTextNode: blogPostTextNode,
-					});
+						const blogPostTextNode = function (character) {
+							typingContent += character;
+							if (tinyMceActive) {
+								tinyMCE.activeEditor.setContent(typingContent, {format: 'html'});
+								// $('#content_ifr').contents().find('body').append(character);
+							} else {
+								$('#content').val(typingContent);
+							}
+						}
 
-					if(tinyMceActive){
-						blogPostArr.forEach(function (line) { // type line by line
-							typewriter
-								.typeString(line)
-								.callFunction(function () {
-									if (tinyMceActive) {
-										typingContent += '<br>';
-										tinyMCE.activeEditor.selection.select(tinyMCE.activeEditor.getBody(), true);
-										tinyMCE.activeEditor.selection.collapse(false);
-									}
-								})
-								.start();
+						let typewriter = new Typewriter(null, {
+							delay: getTypewriterSpeed(blogPost.length),
+							onCreateTextNode: blogPostTextNode,
 						});
+
+						if(tinyMceActive){
+							blogPostArr.forEach(function (line) { // type line by line
+								typewriter
+									.typeString(line)
+									.callFunction(function () {
+										if (tinyMceActive) {
+											typingContent += '<br>';
+											tinyMCE.activeEditor.selection.select(tinyMCE.activeEditor.getBody(), true);
+											tinyMCE.activeEditor.selection.collapse(false);
+										}
+									})
+									.start();
+							});
+						}else{
+							typewriter
+								.typeString(blogPost)
+								.start();
+						}
 					}else{
-						typewriter
-							.typeString(blogPost)
-							.start();
+						if (tinyMceActive) {
+							tinyMCE.activeEditor.setContent(blogPost, {format: 'html'});
+						} else {
+							$('#content').val(blogPost);
+						}
 					}
 
 				}else if (response.data.message) {

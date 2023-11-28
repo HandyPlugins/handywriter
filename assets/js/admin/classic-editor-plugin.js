@@ -1,4 +1,4 @@
-/* global tinymce, jQuery */
+/* global tinymce, jQuery, HandywriterAdmin  */
 import Typewriter from 'typewriter-effect/dist/core';
 import { getTypewriterSpeed } from './utils';
 /* eslint-disable no-unused-vars */
@@ -62,15 +62,20 @@ tinymce.PluginManager.add('handywriter_classic_editor_plugin', function (editor,
 								editor.insertContent(currentSelection); // add current selection without typewriting
 							}
 
-							const typewriter = new Typewriter(null, {
-								delay: getTypewriterSpeed(generatedContent.length),
-								onCreateTextNode(character) {
-									editor.insertContent(character);
-									return null;
-								},
-							});
+							if (HandywriterAdmin.enableTypewriter) {
+								const typewriter = new Typewriter(null, {
+									delay: getTypewriterSpeed(generatedContent.length),
+									onCreateTextNode(character) {
+										editor.insertContent(character);
+										return null;
+									},
+								});
 
-							typewriter.typeString(generatedContent).start();
+								typewriter.typeString(generatedContent).start();
+							} else {
+								editor.insertContent(generatedContent);
+							}
+
 						} else {
 							if (response.data.message) {
 								addTempErrMsg(response.data.message);
