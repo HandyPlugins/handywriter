@@ -1165,7 +1165,7 @@ function mask_string( $input_string, $unmask_length ) {
 function get_available_tts_models() {
 	return [
 		'tts-1'    => 'Text-to-speech 1',
-		'tts-1-hd' => 'Text-to-speech 1 HD'
+		'tts-1-hd' => 'Text-to-speech 1 HD',
 	];
 }
 
@@ -1182,6 +1182,6 @@ function get_available_tts_voices() {
 		'fable'   => 'Fable',
 		'onyx'    => 'Onyx',
 		'nova'    => 'Nova',
-		'shimmer' => 'Shimmer'
+		'shimmer' => 'Shimmer',
 	];
 }

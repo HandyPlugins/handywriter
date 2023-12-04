@@ -169,7 +169,7 @@ function admin_scripts( $hook ) {
 		$args = [
 			'enableTypewriter' => boolval( $settings['enable_typewriter'] ),
 			'nonce'            => wp_create_nonce( 'handywriter_admin_nonce' ),
-			'isBlockEditor'    => $is_block_editor
+			'isBlockEditor'    => $is_block_editor,
 		];
 
 		wp_localize_script(
