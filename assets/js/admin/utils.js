@@ -42,3 +42,65 @@ export const isTinyMCEActive = () => {
 export const unslash = (str) => {
 	return str.replace(/\\/g, '');
 };
+
+/**
+ * Get trimmed text
+ * @param str
+ * @returns {*}
+ */
+export const getTrimmedText = (str) => {
+	return str.replace(/<[^>]*>?/gm, '').replace(/[ ]+/g, ' ');
+}
+
+
+export const noticeTemplate = (message, type = 'error') => {
+	return `<div class="sui-notice sui-notice-${type}">
+							<div class="sui-notice-content">
+								<div class="sui-notice-message">
+									<span class="sui-notice-icon sui-icon-info sui-md" aria-hidden="true"></span>
+									<p>${message}</p>
+								</div>
+							</div>
+						</div>`;
+}
+
+
+
+export const getTinymceContent = (editor_id, textarea_id) => {
+	if (typeof editor_id == 'undefined'){
+		editor_id = wpActiveEditor;
+	}
+
+	if (typeof textarea_id == 'undefined') {
+		textarea_id = editor_id;
+	}
+
+	if (jQuery('#wp-' + editor_id + '-wrap').hasClass('tmce-active') && tinyMCE.get(editor_id)) {
+		const currentSelection = tinyMCE.get(editor_id).selection.getContent({format: 'text'}); // selected content in the editor
+		if (currentSelection) {
+			return currentSelection.trim();
+		}
+		return tinyMCE.get(editor_id).getContent({format: 'text'});
+	} else {
+		const selectedText = getSelectedText(jQuery('#' + textarea_id));
+		if (selectedText) {
+			return getTrimmedText(selectedText)
+		}
+
+		return getTrimmedText(jQuery('#' + textarea_id).val());
+	}
+}
+
+export const getSelectedText = (textarea) =>  {
+	const start = textarea.prop('selectionStart');
+	const finish = textarea.prop('selectionEnd');
+	return textarea.val().substring(start, finish);
+}
+
+export const isBlockEditor = () =>  {
+	if( HandywriterAdmin.isBlockEditor){
+		return HandywriterAdmin.isBlockEditor;
+	}
+	return false;
+}
+

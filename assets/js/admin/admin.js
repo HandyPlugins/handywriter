@@ -13,6 +13,15 @@ import '@wpmudev/shared-ui/dist/js/_src/modal-dialog';
 		}
 	});
 
+	// toggle TTS field based on state of checkbox
+	$('#enable_tts').on('change', function () {
+		if ($(this).is(':checked')) {
+			$('#tts_control').show();
+		} else {
+			$('#tts_control').hide();
+		}
+	});
+
 	$('#hw-show-usage-details').on('click', function (e) {
 		e.preventDefault();
 		$.post(

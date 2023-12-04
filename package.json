@@ -31,7 +31,8 @@
       "admin": "./assets/js/admin/admin.js",
       "block-editor": "./assets/js/admin/block-editor.js",
       "classic-editor": "./assets/js/admin/classic-editor.js",
-      "classic-editor-plugin": "./assets/js/admin/classic-editor-plugin.js"
+      "classic-editor-plugin": "./assets/js/admin/classic-editor-plugin.js",
+      "tts": "./assets/js/admin/tts.js"
     },
     "wpDependencyExternals": true
   }

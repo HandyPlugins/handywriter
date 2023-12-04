@@ -870,6 +870,10 @@ function save_settings() {
 		$settings['enable_history']      = ! empty( $_POST['enable_history'] );
 		$settings['history_records_ttl'] = absint( $_POST['history_records_ttl'] );
 		$settings['enable_typewriter']   = ! empty( $_POST['enable_typewriter'] );
+		$settings['enable_tts']          = ! empty( $_POST['enable_tts'] );
+		$settings['tts_disclosure']      = sanitize_text_field( filter_input( INPUT_POST, 'tts_disclosure', FILTER_SANITIZE_SPECIAL_CHARS ) );
+		$settings['tts_model']           = sanitize_text_field( filter_input( INPUT_POST, 'tts_model', FILTER_SANITIZE_SPECIAL_CHARS ) );
+		$settings['tts_voice']           = sanitize_text_field( filter_input( INPUT_POST, 'tts_voice', FILTER_SANITIZE_SPECIAL_CHARS ) );
 
 		if ( HANDYWRITER_IS_NETWORK ) {
 			update_site_option( SETTING_OPTION, $settings );

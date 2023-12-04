@@ -38,6 +38,7 @@ if ( file_exists( HANDYWRITER_PATH . 'vendor/autoload.php' ) ) {
 require_once HANDYWRITER_INC . 'constants.php';
 require_once HANDYWRITER_INC . 'utils.php';
 require_once HANDYWRITER_INC . 'core.php';
+require_once HANDYWRITER_INC . 'tts.php';
 require_once HANDYWRITER_INC . 'history.php';
 require_once HANDYWRITER_INC . 'admin/dashboard.php';
 
@@ -59,6 +60,7 @@ function bootstrap() {
 	Core\setup();
 	History\setup();
 	Admin\Dashboard\setup();
+	TTS\setup();
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );

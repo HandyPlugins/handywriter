@@ -229,7 +229,7 @@ $license_info = get_license_info();
 				</div>
 				<div class="sui-box-settings-row">
 					<div class="sui-box-settings-col-1">
-						<span class="sui-settings-label" id="role_key"><?php esc_html_e( 'Enable Typewriter', 'handywriter' ); ?></span>
+						<span class="sui-settings-label"><?php esc_html_e( 'Enable Typewriter', 'handywriter' ); ?></span>
 					</div>
 
 					<div class="sui-box-settings-col-2">
@@ -254,6 +254,102 @@ $license_info = get_license_info();
 						</div>
 					</div>
 				</div>
+
+				<div class="sui-box-settings-row">
+					<div class="sui-box-settings-col-1">
+						<span class="sui-settings-label"><?php esc_html_e( 'Enable Text-to-Speech', 'handywriter' ); ?></span>
+					</div>
+
+					<div class="sui-box-settings-col-2">
+						<div class="sui-form-field">
+							<div class="sui-row">
+								<label for="enable_tts" class="sui-toggle">
+									<input
+										type="checkbox"
+										id="enable_tts"
+										name="enable_tts"
+										aria-labelledby="enable_tts_label"
+										aria-describedby="enable_tts_description"
+										aria-controls="tts_control"
+										value="1"
+										<?php checked( 1, $settings['enable_tts'] ); ?>
+									>
+
+									<span class="sui-toggle-slider" aria-hidden="true"></span>
+									<span id="enable_tts_label" class="sui-toggle-label"><?php esc_html_e( 'Turn text into lifelike spoken audio.', 'handywriter' ); ?></span>
+								</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div style=" <?php echo( ! $settings['enable_tts'] ? 'display:none;' : '' ); ?>" tabindex="0" id="tts_control">
+					<div class="sui-box-settings-row">
+						<div class="sui-box-settings-col-1">
+							<span class="sui-settings-label"><?php esc_html_e( 'TTS disclosure', 'handywriter' ); ?></span>
+						</div>
+
+						<div class="sui-box-settings-col-2">
+							<div class="sui-form-field">
+								<input
+									name="tts_disclosure"
+									id="tts_disclosure"
+									class="sui-form-control"
+									aria-labelledby="tts_disclosure_label"
+									type="text"
+									value="<?php echo esc_attr( $settings['tts_disclosure'] ); ?>"
+									autocomplete="off"
+								/>
+								<span class="sui-description">
+									<?php esc_html_e( 'OpenAI usage policy requires you to provide a clear disclosure to end users that the TTS voice they are hearing is AI-generated.', 'handywriter' ); ?>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="sui-box-settings-row">
+						<div class="sui-box-settings-col-1">
+							<span class="sui-settings-label"><?php esc_html_e( 'TTS Model', 'handywriter' ); ?></span>
+						</div>
+						<?php
+						$tts_models = \Handywriter\Utils\get_available_tts_models();
+						?>
+						<div class="sui-box-settings-col-2">
+							<div class="sui-form-field">
+								<select name="tts_model" id="content-language" class="sui-select">
+									<?php foreach ( $tts_models as $tts_model => $model_label ) : ?>
+										<option <?php selected( $tts_model, $settings['tts_model'] ); ?> value="<?php echo esc_attr( $tts_model ); ?>">
+											<?php echo esc_attr( $model_label ); ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<span class="sui-description"><?php esc_html_e( 'tts-1 is optimized for real time text to speech use cases and tts-1-hd is optimized for quality.', 'handywriter' ); ?></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="sui-box-settings-row">
+						<div class="sui-box-settings-col-1">
+							<span class="sui-settings-label"><?php esc_html_e( 'TTS Voice', 'handywriter' ); ?></span>
+						</div>
+						<?php
+						$tts_voices = \Handywriter\Utils\get_available_tts_voices();
+						?>
+						<div class="sui-box-settings-col-2">
+							<div class="sui-form-field">
+								<select name="tts_voice" id="content-language" class="sui-select">
+									<?php foreach ( $tts_voices as $tts_voice => $voice_label ) : ?>
+										<option <?php selected( $tts_voice, $settings['tts_voice'] ); ?> value="<?php echo esc_attr( $tts_voice ); ?>">
+											<?php echo esc_attr( $voice_label ); ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<span class="sui-description"><?php esc_html_e( 'The voice to use when generating the audio.', 'handywriter' ); ?></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
 
 			</div>
 

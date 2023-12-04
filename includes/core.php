@@ -65,6 +65,7 @@ function get_enqueue_contexts() {
 		'editorial',
 		'classic-editor',
 		'block-editor',
+		'tts',
 	];
 }
 
@@ -162,9 +163,13 @@ function admin_scripts( $hook ) {
 
 		$settings = \Handywriter\Utils\get_settings();
 
+		$current_screen  = get_current_screen();
+		$is_block_editor = method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor();
+
 		$args = [
-			'enableTypewriter' => boolval($settings['enable_typewriter']),
+			'enableTypewriter' => boolval( $settings['enable_typewriter'] ),
 			'nonce'            => wp_create_nonce( 'handywriter_admin_nonce' ),
+			'isBlockEditor'    => $is_block_editor
 		];
 
 		wp_localize_script(
