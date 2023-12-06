@@ -1185,3 +1185,29 @@ function get_available_tts_voices() {
 		'shimmer' => 'Shimmer',
 	];
 }
+
+/**
+ * Get available image models
+ *
+ * @return array
+ * @since 1.3
+ */
+function get_available_image_models() {
+	return [
+		'dall-e-3' => 'DALL-E 3',
+		'dall-e-2' => 'DALL-E 2',
+	];
+}
+
+/**
+ * Get available image styles
+ *
+ * @return array
+ * @since 1.3
+ */
+function get_available_image_styles() {
+	return [
+		'vivid'   => esc_html__( 'Vivid', 'handywriter' ),
+		'natural' => esc_html__( 'Natural', 'handywriter' ),
+	];
+}

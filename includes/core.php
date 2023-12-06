@@ -66,6 +66,7 @@ function get_enqueue_contexts() {
 		'classic-editor',
 		'block-editor',
 		'tts',
+		'image-generator',
 	];
 }
 

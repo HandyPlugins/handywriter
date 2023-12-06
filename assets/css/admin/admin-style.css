@@ -2,6 +2,7 @@
 * HandyWriter - Admin Styles
 */
 @import url("@wpmudev/shared-ui/dist/css/shared-ui.css");
+@import "image-generator.css";
 
 .handywriter-button{
 }

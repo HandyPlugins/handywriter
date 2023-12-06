@@ -1,0 +1,88 @@
+
+.placeholder-col {
+	width: 100%;
+	padding-bottom: 100%;
+	overflow: hidden;
+	display: block;
+	background-color:rgb(245, 245, 245);
+	text-align: center;
+}
+
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false;
+}
+
+
+#handywriter-image-generator-form select{
+	width: 100%;
+}
+
+.hw-generated-image-result-set{
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: flex-start;
+}
+
+.hw-generated-image-result-set .image-card {
+	border: 2px solid transparent;
+	--angle: 0deg;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	animation: 10s rotate linear infinite;
+	padding: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: white;
+	flex: 1 1 30%; /* Adjusts to take up to 30% of the container's width */
+	max-width: calc(33.333% - 10px); /* Adjust for 3 cards per row, considering the gap */
+}
+
+.image-item {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-item img {
+	width: 100%; /* Change to 100% to maintain aspect ratio */
+	height: auto; /* Set height to auto */
+	max-width: 100%;
+}
+
+
+.hw-separator {
+	font-size:small;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.hw-separator::before,
+.hw-separator::after {
+	content: '';
+	flex: 1;
+	border-bottom: 1px solid #efefef;
+}
+
+.hw-separator:not(:empty)::before {
+	margin-right: .25em;
+}
+
+.hw-separator:not(:empty)::after {
+	margin-left: .25em;
+}
+
+.image-card-btn-group{
+	display: flex;
+	justify-content: center;
+}

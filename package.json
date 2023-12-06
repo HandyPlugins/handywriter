@@ -32,7 +32,8 @@
       "block-editor": "./assets/js/admin/block-editor.js",
       "classic-editor": "./assets/js/admin/classic-editor.js",
       "classic-editor-plugin": "./assets/js/admin/classic-editor-plugin.js",
-      "tts": "./assets/js/admin/tts.js"
+      "tts": "./assets/js/admin/tts.js",
+      "image-generator": "./assets/js/admin/image-generator.js"
     },
     "wpDependencyExternals": true
   }

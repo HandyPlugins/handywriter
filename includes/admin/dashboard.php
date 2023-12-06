@@ -123,6 +123,16 @@ function child_admin_menu() {
 			MENU_SLUG . '-templates',
 			__NAMESPACE__ . '\\content_templates_page'
 		);
+
+		add_submenu_page(
+			MENU_SLUG,
+			esc_html__( 'Image Generator', 'handywriter' ),
+			esc_html__( 'Image Generator', 'handywriter' ),
+			$capability,
+			MENU_SLUG . '-image-generator',
+			__NAMESPACE__ . '\\image_generator_page'
+		);
+
 	} else {
 		add_menu_page(
 			esc_html__( 'Templates', 'handywriter' ),
@@ -130,6 +140,15 @@ function child_admin_menu() {
 			$capability,
 			MENU_SLUG . '-templates',
 			__NAMESPACE__ . '\\content_templates_page',
+			ICON_BASE64
+		);
+
+		add_menu_page(
+			esc_html__( 'Image Generator', 'handywriter' ),
+			esc_html__( 'Image Generator', 'handywriter' ),
+			$capability,
+			MENU_SLUG . '-image-generator',
+			__NAMESPACE__ . '\\image_generator_page',
 			ICON_BASE64
 		);
 	}
@@ -528,6 +547,17 @@ function content_templates_page() {
 	<?php
 }
 
+
+function image_generator_page() {
+	?>
+	<main class="sui-wrap">
+
+		<?php include HANDYWRITER_INC . 'admin/partials/header.php'; ?>
+		<?php include HANDYWRITER_INC . 'admin/partials/image-generator-template.php'; ?>
+		<?php include HANDYWRITER_INC . 'admin/partials/footer.php'; ?>
+	</main>
+	<?php
+}
 
 /**
  * Render contents

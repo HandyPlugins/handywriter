@@ -39,6 +39,7 @@ require_once HANDYWRITER_INC . 'constants.php';
 require_once HANDYWRITER_INC . 'utils.php';
 require_once HANDYWRITER_INC . 'core.php';
 require_once HANDYWRITER_INC . 'tts.php';
+require_once HANDYWRITER_INC . 'image-generator.php';
 require_once HANDYWRITER_INC . 'history.php';
 require_once HANDYWRITER_INC . 'admin/dashboard.php';
 
@@ -61,6 +62,7 @@ function bootstrap() {
 	History\setup();
 	Admin\Dashboard\setup();
 	TTS\setup();
+	ImageGenerator\setup();
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
