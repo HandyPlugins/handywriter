@@ -1,19 +1,19 @@
-=== Handywriter – AI-Powered Writing Assistant for WordPress ===
+=== Handywriter – AI-Powered Assistant for WordPress - Powered by GPT-4 & ChatGPT & DALL-E ===
 Contributors:      handyplugins, m_uysl
-Tags:              content writing, AI, GPT, copywriting, copywriter
+Tags:              content writing, AI, GPT, copywriting, copywriter, TTS, speech, image generator, gpt4
 Requires at least: 5.4
 Tested up to:      6.4
-Requires PHP:      5.6
-Stable tag:        1.2.2
+Requires PHP:      7.2.5
+Stable tag:        1.3
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Donate link:       https://handyplugins.co/donate/
 
-AI-Powered writing assistant for WordPress. Create unique content effortlessly.
+AI-Powered assistant for WordPress. Effortlessly Craft Unique Content, and Seamlessly Generate Captivating Images and Audio.
 
 == Description ==
 
-Handywriter is an AI-powered writing assistant that can help you write better, faster, and more easily within WordPress. It's a great tool for bloggers, copywriters, and anyone who needs to write content for their website.
+Handywriter is an AI-powered writing assistant enhanced with image generation and text-to-speech capabilities, designed to elevate your WordPress content creation experience. This innovative tool streamlines the writing process, making it faster and more intuitive, perfect for bloggers, copywriters, and anyone creating content for their website. With Handywriter, you can not only write better but also enrich your posts with compelling images and bring your words to life with speech.
 
 You don't have to leave your favorite editor to bring AI power to WordPress. Handywriter works with both block editor and classic editor. So you can write your content in the editor you already know and love.
 
@@ -23,6 +23,10 @@ You don't have to leave your favorite editor to bring AI power to WordPress. Han
 Handywriter comes with various features to help you generate content.
 
 __Write a Blog Post:__ Just enter a blog title, and Handywriter will generate a blog post for you. You can then edit the content and publish it.
+
+__Image Generator:__ Bring your articles to life with AI-driven image creation. Enhance your posts with visually appealing, contextually relevant images generated on-demand.
+
+__Text-to-Speech:__ Expand your content's reach with an immersive audio experience. Transform written content into high-quality speech, making your site more accessible and engaging.
 
 __Title Recommendations:__ If you are stuck with a title, Handywriter can suggest a few for you.
 
@@ -56,6 +60,15 @@ __History:__ You can keep records of the generated results.
 - __Product Review:__ Write amazing reviews for the products you love!
 - __Cold Email:__ Write a cold email that gets results.
 - __Poll Question and Answers:__ Interact with your audience in a fun way.
+
+= Why Choose Handywriter =
+
+Handywriter goes beyond traditional writing tools, offering a blend of technology and creativity. It's not just a plugin; it's a partner in crafting high-quality, engaging, and SEO-optimized content for your website. Whether you're a seasoned blogger or a digital marketing enthusiast, Handywriter is your go-to solution for all content needs.
+
+== Privacy Policy ==
+
+Handywriter utilizes API provided by Handyplugins for processing and storing user prompts and User IDs.This data enhances the plugin's functionality and may be shared with third-party services like OpenAI (OpenAI's privacy policy available [here](https://openai.com/policies/privacy-policy)) and Copyscape for plagiarism detection.
+Our access to this data is limited to quality control and adherence to terms of service. Users are advised against including personal information in prompts. For comprehensive details on our data handling and privacy practices, please visit our [Privacy Policy](https://handyplugins.co/privacy-policy/).
 
 
 = Contributing & Bug Report =
@@ -95,18 +108,33 @@ Yes, it works with both classic and block editors.
 
 The plugin is free. But you will need a license to get the benefits of the plugin. You can [choose the best plan that suits you](https://handyplugins.co/handywriter/pricing/) on our website.
 
+= Can I use my own OpenAI API key with Handywriter? =
+
+No, Handywriter does not support the use of personal OpenAI API keys. Our plugin utilizes a combination of different technologies, not limited to OpenAI, to deliver optimal performance and features. To access all the functionalities of Handywriter, users are required to obtain a license key from us. This ensures a seamless and integrated experience with all the features and updates we provide.
+
 
 == Screenshots ==
 
-1. Handywriter will help you to create a unique and high quality content. Just enter title and hit the "Write a Blog Post" button.
-2. Handywriter can help you to generate engaging titles. Just click on the “Suggest a Title” button and choose one of the titles generated for you.
-3. Create a summary for your blog post.
-4. Plagiarism checker will help you to ensure the originality of your content.
-5. Complete the sentence or paragraph.
-6. Fix grammar and spelling errors.
-7. Content templates.
+1. Handywriter will help you create unique and high-quality content. Just enter a title and hit the "Write a Blog Post" button.
+2. The image generator will help you create images for your blog post and save them to the WordPress media library.
+3. Easily create audio for your blog post.
+4. Handywriter can help you generate engaging titles. Just click on the "Suggest a Title" button and choose one of the titles generated for you.
+5. Quickly create a concise summary for your blog post.
+6. The plagiarism checker will help you ensure the originality of your content.
+7. Automatically complete sentences or paragraphs in your writing.
+8. Fix grammar and spelling errors.
+9. Content templates.
 
 == Changelog ==
+
+= 1.3 (December 6, 2023) =
+* [New feature]: Image generator.
+* [New feature]: Text to speech generator.
+* [New feature]: Control over typewriter effect.
+* Dependency updates.
+* Small tweaks and improvements.
+* Bump minimum PHP version to 7.2.5
+* Tested with WP 6.4
 
 = 1.2.2 (July 22, 2023) =
 * Fixed a wrong textdomain
