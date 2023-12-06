@@ -133,7 +133,7 @@ function render_template() {
 							<div class="sui-form-field">
 								<span class="sui-settings-label" id="label_handywriter_tts_voice_model"><?php esc_html_e( 'TTS Model', 'handywriter' ); ?></span>
 
-								<select name="tts_model" id="content-language" class="sui-select">
+								<select name="tts_model" id="hw_tts_model" class="sui-select">
 									<?php foreach ( $tts_models as $tts_model => $model_label ) : ?>
 										<option <?php selected( $tts_model, $settings['tts_model'] ); ?> value="<?php echo esc_attr( $tts_model ); ?>">
 											<?php echo esc_attr( $model_label ); ?>
@@ -145,7 +145,7 @@ function render_template() {
 
 							<div class="sui-form-field">
 								<span class="sui-settings-label" id="label_handywriter_tts_voice"><?php esc_html_e( 'TTS Voice', 'handywriter' ); ?></span>
-								<select name="tts_voice" id="content-language" class="sui-select">
+								<select name="tts_voice" id="hw_tts_voice" class="sui-select">
 									<?php foreach ( $tts_voices as $tts_voice => $voice_label ) : ?>
 										<option <?php selected( $tts_voice, $settings['tts_voice'] ); ?> value="<?php echo esc_attr( $tts_voice ); ?>">
 											<?php echo esc_attr( $voice_label ); ?>
