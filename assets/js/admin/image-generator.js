@@ -27,15 +27,19 @@ const { __ } = wp.i18n;
 	}
 
 	function toggleModel() {
+		const $qualityRow = $('#enable-hd-row');
 		const currentModel = $imageGeneratorModel.val();
 		populateImageResolutions();
 
 		$('#image-style-row').toggle(currentModel === 'dall-e-3');
 		$('#image-count-row').toggle(currentModel !== 'dall-e-3');
-		$('#enable-hd-row').hide();
+
 		// reset image count to 1 for placeholder
 		if ('dall-e-3' === currentModel) {
 			$('#image_count').val(1).trigger('change');
+			$qualityRow.show();
+		} else {
+			$qualityRow.hide();
 		}
 	}
 
