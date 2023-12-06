@@ -51,7 +51,7 @@ function admin_scripts( $hook ) {
 		[
 			'jquery',
 			'lodash',
-			'wp-i18n'
+			'wp-i18n',
 		],
 		HANDYWRITER_VERSION,
 		true
@@ -131,7 +131,12 @@ function generate_image_callback() {
 		$prompt      = sanitize_text_field( $form_data['image_generator']['prompt'] );
 		$html_output = \Handywriter\ImageGenerator\result_set_row( $images, $prompt );
 
-		wp_send_json_success( [ 'images' => $images, 'html' => $html_output ] );
+		wp_send_json_success(
+			[
+				'images' => $images,
+				'html'   => $html_output,
+			]
+		);
 	}
 
 	wp_send_json_error( [ 'message' => esc_html__( 'Unable to generate image.', 'handywriter' ) ] );
@@ -155,10 +160,9 @@ function save_image_to_media_library_callback() {
 		wp_send_json_error( [ 'message' => esc_html__( 'No image url provided.', 'handywriter' ) ] );
 	}
 
-	require_once( ABSPATH . 'wp-admin/includes/image.php' );
-	require_once( ABSPATH . 'wp-admin/includes/file.php' );
-	require_once( ABSPATH . 'wp-admin/includes/media.php' );
-
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/media.php';
 
 	$image_url      = esc_url_raw( $_POST['image_url'] ); // phpcs:ignore
 	$prompt         = ! empty( $_POST['prompt'] ) ? sanitize_text_field( $_POST['prompt'] ) : '';
@@ -169,11 +173,11 @@ function save_image_to_media_library_callback() {
 	$tmp        = download_url( $image_url );
 	$file_array = array(
 		'name'     => sanitize_file_name( $filename ),
-		'tmp_name' => $tmp
+		'tmp_name' => $tmp,
 	);
 
 	if ( is_wp_error( $tmp ) ) {
-		@unlink( $file_array['tmp_name'] );
+		unlink( $file_array['tmp_name'] );
 		wp_send_json_error( [ 'message' => $tmp->get_error_message() ] );
 	}
 
@@ -187,7 +191,7 @@ function save_image_to_media_library_callback() {
 
 	$id = media_handle_sideload( $file_array, 0, $image_title, [ 'post_excerpt' => $prompt ] );
 	if ( is_wp_error( $id ) ) {
-		@unlink( $file_array['tmp_name'] );
+		unlink( $file_array['tmp_name'] );
 		wp_send_json_error( [ 'message' => $id->get_error_message() ] );
 	}
 
@@ -206,12 +210,14 @@ function save_image_to_media_library_callback() {
 function result_set_row( $images, $prompt ) {
 	ob_start();
 	?>
-	<div class="hw-separator"><?php echo gmdate( 'M d, h:i A', current_time( 'timestamp' ) ) ?></div>
+	<div class="hw-separator">
+		<?php echo esc_html( gmdate( 'M d, h:i A', current_time( 'timestamp' ) ) ); // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested ?>
+	</div>
 	<span class="sui-label"><?php echo esc_html( $prompt ); ?></span>
 
 	<div class="sui-row hw-generated-image-result-set">
-		<?php foreach ( $images as $image ): ?>
-			<?php echo image_card( $image, $prompt ); ?>
+		<?php foreach ( $images as $image ) : ?>
+			<?php echo image_card( $image, $prompt ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<?php endforeach; ?>
 	</div>
 	<?php

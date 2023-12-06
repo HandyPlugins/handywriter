@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Templates Page
+ * Image Generator Page Template
  *
  * @package Handywriter\Admin
  */

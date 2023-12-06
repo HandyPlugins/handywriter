@@ -547,7 +547,12 @@ function content_templates_page() {
 	<?php
 }
 
-
+/**
+ * Add image generator page
+ *
+ * @return void
+ * @since 1.3
+ */
 function image_generator_page() {
 	?>
 	<main class="sui-wrap">
