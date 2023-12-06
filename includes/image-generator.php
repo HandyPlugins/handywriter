@@ -1,6 +1,6 @@
 <?php
 /**
- * Text-to-Speech functionality.
+ * Image Generator functionality.
  *
  * @package Handywriter
  */
