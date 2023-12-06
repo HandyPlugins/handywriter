@@ -21,7 +21,7 @@ const { BlockControls } = wp.blockEditor;
 const { ToolbarGroup, ToolbarButton, Icon } = wp.components;
 
 // Supported blocks for the toolbar items
-const supportedBlocks = ['core/paragraph', 'core/heading'];
+const supportedBlocks = ['core/paragraph', 'core/heading', 'core/quote', 'core/list', 'core/list-item']
 
 /**
  * Adds a custom button to the Paragraph Toolbar.
@@ -45,7 +45,23 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 				selectedText = wp.data.select('core/block-editor')
 					.getBlocks()
 					.filter(block => supportedBlocks.includes(block.name))
-					.map(block => block.attributes.content)
+					.map(block => {
+						switch (block.name) {
+							case 'core/paragraph':
+							case 'core/heading':
+								return block.attributes.content;
+							case 'core/quote':
+								// Assuming 'core/quote' has 'value' and 'citation' attributes
+								const quoteContent = block.innerBlocks.map(innerBlock => innerBlock.attributes.content).join('\n');
+								const citation = block.attributes.citation;
+								return quoteContent + '\n' + citation;
+							case 'core/list':
+								// Assuming 'core/list' stores its items in an array
+								return block.innerBlocks.map(listItem => listItem.attributes.content).join('\n');
+							default:
+								return '';
+						}
+					})
 					.join('\n\n');
 			}
 			return selectedText;
