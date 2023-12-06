@@ -3,7 +3,7 @@ Handywriter
 
 ![Support Level](https://img.shields.io/badge/support-active-green.svg) [![Release Version](https://img.shields.io/wordpress/plugin/v/handywriter?label=Release%20Version)](https://github.com/HandyPlugins/handywriter/releases) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/handywriter?label=WordPress) ![Required PHP Version](https://img.shields.io/wordpress/plugin/required-php/handywriter?label=PHP)
 
-AI-powered writing assistant for WordPress. It helps you write better content.
+AI-Powered assistant for WordPress. Effortlessly Craft Unique Content, and Seamlessly Generate Captivating Images and Audio.
 
 __Website__: [http://handyplugins.co/handywriter](http://handyplugins.co/handywriter/)
 
@@ -14,6 +14,10 @@ __Docs__: [http://handyplugins.co/handywriter/docs](http://handyplugins.co/handy
 Handywriter comes with various features to help you generate content.
 
 __Write a Blog Post:__ Just enter a blog title, and Handywriter will generate a blog post for you. You can then edit the content and publish it.
+
+__Image Generator:__ Bring your articles to life with AI-driven image creation. Enhance your posts with visually appealing, contextually relevant images generated on-demand.
+
+__Text-to-Speech:__ Expand your content's reach with an immersive audio experience. Transform written content into high-quality speech, making your site more accessible and engaging.
 
 __Title Recommendations:__ If you are stuck with a title, Handywriter can suggest a few for you.
 
