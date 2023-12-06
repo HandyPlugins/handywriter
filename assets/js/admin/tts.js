@@ -54,8 +54,10 @@ const withToolbarButton = createHigherOrderComponent((BlockEdit) => {
 		// Open the modal for text-to-speech
 		const openTTSModal = () => {
 			const voiceContent = getBlockContent();
+			// Replace <br> and <br/> tags with newline characters
+			const textWithNewLines = voiceContent.replace(/<br\s*[\/]?>/gi, '\n');
 			const modalTextarea = jQuery('#handywriter-tts-content');
-			modalTextarea.val(jQuery('<div>').html(voiceContent).text().replace(/(<([^>]+)>)/ig, '')); // Strip HTML and set content
+			modalTextarea.val(jQuery('<div>').html(textWithNewLines).text().replace(/(<([^>]+)>)/ig, '')); // Strip HTML and set content
 
 			window.SUI.openModal('handywriter-tts-modal', 'wpbody-content', undefined, true);
 		};
