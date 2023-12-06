@@ -2,21 +2,21 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Handywriter 1.2.2\n"
+"Project-Id-Version: Handywriter 1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/handywriter\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-22T10:12:25+00:00\n"
+"POT-Creation-Date: 2023-12-06T16:24:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: handywriter\n"
 
 #. Plugin Name of the plugin
 #: includes/admin/dashboard.php:87
-#: includes/admin/dashboard.php:129
+#: includes/admin/dashboard.php:139
 #: includes/admin/partials/content-templates.php:199
 #: includes/admin/partials/content-templates.php:242
 #: includes/admin/partials/content-templates.php:270
@@ -55,169 +55,182 @@ msgstr ""
 
 #: includes/admin/dashboard.php:120
 #: includes/admin/dashboard.php:121
-#: includes/admin/dashboard.php:128
+#: includes/admin/dashboard.php:138
 msgid "Templates"
 msgstr ""
 
-#: includes/admin/dashboard.php:164
-#: includes/admin/dashboard.php:290
-#: includes/admin/dashboard.php:378
+#: includes/admin/dashboard.php:129
+#: includes/admin/dashboard.php:130
+#: includes/admin/dashboard.php:147
+#: includes/admin/dashboard.php:148
+msgid "Image Generator"
+msgstr ""
+
+#: includes/admin/dashboard.php:183
+#: includes/admin/dashboard.php:309
+#: includes/admin/dashboard.php:397
+#: includes/image-generator.php:76
+#: includes/image-generator.php:152
+#: includes/tts.php:235
 msgid "Invalid ajax nonce!"
 msgstr ""
 
-#: includes/admin/dashboard.php:168
-#: includes/admin/dashboard.php:294
-#: includes/admin/dashboard.php:382
-#: includes/admin/dashboard.php:581
+#: includes/admin/dashboard.php:187
+#: includes/admin/dashboard.php:313
+#: includes/admin/dashboard.php:401
+#: includes/admin/dashboard.php:616
+#: includes/image-generator.php:80
+#: includes/image-generator.php:156
+#: includes/tts.php:239
 msgid "You do not have permission to perform this action!"
 msgstr ""
 
-#: includes/admin/dashboard.php:225
-#: includes/admin/dashboard.php:267
-#: includes/utils.php:448
+#: includes/admin/dashboard.php:244
+#: includes/admin/dashboard.php:286
+#: includes/utils.php:453
 msgid "No content generated!"
 msgstr ""
 
-#: includes/admin/dashboard.php:257
+#: includes/admin/dashboard.php:276
 msgid "Just click on one of the generated titles, and the title will be updated automatically in the editor."
 msgstr ""
 
-#: includes/admin/dashboard.php:259
+#: includes/admin/dashboard.php:278
 msgid "Just click on one of the generated summary, selected content will be appended to editor automatically."
 msgstr ""
 
-#: includes/admin/dashboard.php:339
+#: includes/admin/dashboard.php:358
 msgid "Plagiarism check is not complete!"
 msgstr ""
 
-#: includes/admin/dashboard.php:342
-#: assets/js/admin/block-editor/sidebar.js:514
+#: includes/admin/dashboard.php:361
+#: assets/js/admin/block-editor/sidebar.js:526
 msgid "No plagiarism has been detected!"
 msgstr ""
 
-#: includes/admin/dashboard.php:344
+#: includes/admin/dashboard.php:363
 msgid "Plagiarism has been detected!"
 msgstr ""
 
 #. translators: %s: similarity percentage
-#: includes/admin/dashboard.php:357
-#: assets/js/admin/block-editor/sidebar.js:531
+#: includes/admin/dashboard.php:376
+#: assets/js/admin/block-editor/sidebar.js:543
 msgid "%s%% of the similarity found on"
 msgstr ""
 
-#: includes/admin/dashboard.php:455
+#: includes/admin/dashboard.php:474
 msgid "Proofreading is not complete!"
 msgstr ""
 
-#: includes/admin/dashboard.php:460
-#: assets/js/admin/block-editor/sidebar.js:579
+#: includes/admin/dashboard.php:479
+#: assets/js/admin/block-editor/sidebar.js:591
 msgid "No mistake has been found!"
 msgstr ""
 
 #. translators: %d: The count of proofreading suggestions
-#: includes/admin/dashboard.php:465
-#: assets/js/admin/block-editor/sidebar.js:569
+#: includes/admin/dashboard.php:484
+#: assets/js/admin/block-editor/sidebar.js:581
 msgid "%d suggestion."
 msgid_plural "%d suggestions."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: The count of the results
-#: includes/admin/dashboard.php:546
+#: includes/admin/dashboard.php:581
 msgid "%s Result Generated"
 msgid_plural "%s Results Generated"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/admin/dashboard.php:560
+#: includes/admin/dashboard.php:595
 msgid "Copy"
 msgstr ""
 
-#: includes/admin/dashboard.php:577
+#: includes/admin/dashboard.php:612
 msgid "Login link could not be generated because: Invalid ajax nonce!"
 msgstr ""
 
-#: includes/admin/dashboard.php:587
+#: includes/admin/dashboard.php:622
 msgid "Unknown content type."
 msgstr ""
 
-#: includes/admin/dashboard.php:621
+#: includes/admin/dashboard.php:656
 msgid "No content has been generated!"
 msgstr ""
 
-#: includes/admin/dashboard.php:669
-#: assets/js/admin/block-editor/sidebar.js:414
+#: includes/admin/dashboard.php:704
+#: assets/js/admin/block-editor/sidebar.js:426
 msgid "Handywriter Assistant"
 msgstr ""
 
-#: includes/admin/dashboard.php:699
-#: assets/js/admin/block-editor/sidebar.js:439
+#: includes/admin/dashboard.php:734
+#: assets/js/admin/block-editor/sidebar.js:451
 msgid "Write a Post"
 msgstr ""
 
-#: includes/admin/dashboard.php:708
-#: assets/js/admin/block-editor/sidebar.js:453
+#: includes/admin/dashboard.php:743
+#: assets/js/admin/block-editor/sidebar.js:465
 msgid "Suggest a Title"
 msgstr ""
 
-#: includes/admin/dashboard.php:714
-#: assets/js/admin/block-editor/sidebar.js:466
+#: includes/admin/dashboard.php:749
+#: assets/js/admin/block-editor/sidebar.js:478
 msgid "Create a Summary"
 msgstr ""
 
-#: includes/admin/dashboard.php:720
-#: assets/js/admin/block-editor/sidebar.js:479
+#: includes/admin/dashboard.php:755
+#: assets/js/admin/block-editor/sidebar.js:491
 msgid "Create a Meta Description"
 msgstr ""
 
-#: includes/admin/dashboard.php:726
-#: assets/js/admin/block-editor/sidebar.js:492
+#: includes/admin/dashboard.php:761
+#: assets/js/admin/block-editor/sidebar.js:504
 msgid "Plagiarism Check"
 msgstr ""
 
-#: includes/admin/dashboard.php:732
-#: assets/js/admin/block-editor/sidebar.js:558
+#: includes/admin/dashboard.php:767
+#: assets/js/admin/block-editor/sidebar.js:570
 msgid "Proofreading"
 msgstr ""
 
-#: includes/admin/dashboard.php:821
+#: includes/admin/dashboard.php:856
 msgid "Click to select this"
 msgstr ""
 
-#: includes/admin/dashboard.php:879
+#: includes/admin/dashboard.php:919
 msgid "Settings saved."
 msgstr ""
 
-#: includes/admin/dashboard.php:945
-#: includes/admin/dashboard.php:949
+#: includes/admin/dashboard.php:985
+#: includes/admin/dashboard.php:989
 msgid "You can not perform this action!"
 msgstr ""
 
-#: includes/admin/dashboard.php:987
+#: includes/admin/dashboard.php:1027
 msgid "No usage info has been found!"
 msgstr ""
 
-#: includes/admin/dashboard.php:1002
+#: includes/admin/dashboard.php:1042
 msgid "No record has been found yet! The details will shown here once you spend some credits."
 msgstr ""
 
-#: includes/admin/dashboard.php:1010
+#: includes/admin/dashboard.php:1050
 msgid "Shows most recent 50 usage."
 msgstr ""
 
-#: includes/admin/dashboard.php:1018
+#: includes/admin/dashboard.php:1058
 msgid "Time"
 msgstr ""
 
-#: includes/admin/dashboard.php:1019
+#: includes/admin/dashboard.php:1059
 msgid "Credits"
 msgstr ""
 
-#: includes/admin/dashboard.php:1020
+#: includes/admin/dashboard.php:1060
 msgid "Domain"
 msgstr ""
 
-#: includes/admin/dashboard.php:1021
+#: includes/admin/dashboard.php:1061
 msgid "Type"
 msgstr ""
 
@@ -227,11 +240,14 @@ msgstr ""
 
 #: includes/admin/partials/ce-modals.php:32
 #: includes/admin/partials/modals.php:35
+#: includes/tts.php:115
 msgid "Close this modal"
 msgstr ""
 
 #: includes/admin/partials/ce-modals.php:38
 #: includes/admin/partials/content-templates.php:516
+#: includes/admin/partials/image-generator-template.php:116
+#: includes/tts.php:170
 #: assets/js/admin/classic-editor-plugin.js:48
 msgid "Generating..."
 msgstr ""
@@ -521,6 +537,63 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
+#: includes/admin/partials/image-generator-template.php:26
+msgid "Image Generate"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:32
+msgid "Prompt"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:34
+msgid "What do you want to see?"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:43
+msgid "Enter prompt for image generation."
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:45
+msgid "Model"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:54
+msgid "Resolution"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:61
+msgid "Style"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:70
+msgid "Image Count"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:72
+msgid "Enter the number of images to generate. Note that generating a greater number of images will consume more credits."
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:76
+msgid "Quality"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:87
+msgid "Standard"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:99
+msgid "HD"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:110
+#: includes/tts.php:165
+msgid "Generate"
+msgstr ""
+
+#: includes/admin/partials/image-generator-template.php:120
+msgid "Generate Images"
+msgstr ""
+
 #: includes/admin/partials/modals.php:27
 msgid "Close"
 msgstr ""
@@ -606,7 +679,50 @@ msgstr ""
 msgid "Maximum number of days to keep history records. (Enter 0 to keep records indefinitely. Purging old records helps to keep your WordPress installation running optimally)"
 msgstr ""
 
-#: includes/admin/partials/settings.php:237
+#: includes/admin/partials/settings.php:232
+msgid "Enable Typewriter"
+msgstr ""
+
+#: includes/admin/partials/settings.php:250
+msgid "Enable Typewriter Effect in WordPress editor."
+msgstr ""
+
+#: includes/admin/partials/settings.php:260
+msgid "Enable Text-to-Speech"
+msgstr ""
+
+#: includes/admin/partials/settings.php:279
+msgid "Turn text into lifelike spoken audio."
+msgstr ""
+
+#: includes/admin/partials/settings.php:290
+msgid "TTS disclosure"
+msgstr ""
+
+#: includes/admin/partials/settings.php:305
+msgid "OpenAI usage policy requires you to provide a clear disclosure to end users that the TTS voice they are hearing is AI-generated."
+msgstr ""
+
+#: includes/admin/partials/settings.php:312
+#: includes/tts.php:134
+msgid "TTS Model"
+msgstr ""
+
+#: includes/admin/partials/settings.php:326
+msgid "tts-1 is optimized for real time text to speech use cases and tts-1-hd is optimized for quality."
+msgstr ""
+
+#: includes/admin/partials/settings.php:333
+#: includes/tts.php:147
+msgid "TTS Voice"
+msgstr ""
+
+#: includes/admin/partials/settings.php:347
+#: includes/tts.php:155
+msgid "The voice to use when generating the audio."
+msgstr ""
+
+#: includes/admin/partials/settings.php:360
 msgid "Update settings"
 msgstr ""
 
@@ -731,7 +847,7 @@ msgid_plural "%1$d Ecommerce Product Descriptions generated for %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: %1$d is the number of results, %2$s advertisiment for
+#. translators: %1$d is the number of results, %2$s advertisement for
 #: includes/history.php:281
 msgid "%1$d Google Ad Copy generated for %2$s"
 msgid_plural "%1$d Google Ad Copies generated for %2$s"
@@ -785,97 +901,167 @@ msgstr[1] ""
 msgid "Editor Content Generation on %s"
 msgstr ""
 
-#: includes/utils.php:201
+#: includes/image-generator.php:85
+msgid "No data provided."
+msgstr ""
+
+#: includes/image-generator.php:142
+msgid "Unable to generate image."
+msgstr ""
+
+#: includes/image-generator.php:160
+msgid "No image url provided."
+msgstr ""
+
+#: includes/image-generator.php:198
+msgid "Image successfully saved to media library."
+msgstr ""
+
+#: includes/image-generator.php:252
+#: includes/image-generator.php:262
+msgid "Save to Media Library"
+msgstr ""
+
+#: includes/image-generator.php:258
+msgid "Saving to media library..."
+msgstr ""
+
+#: includes/tts.php:78
+#: includes/tts.php:112
+msgid "Text to Speech"
+msgstr ""
+
+#: includes/tts.php:121
+msgid "What text do you want to convert to voice?"
+msgstr ""
+
+#: includes/tts.php:143
+msgid "TTS-1 is designed for real-time text-to-speech applications, while TTS-1-HD focuses on delivering higher quality outcomes."
+msgstr ""
+
+#: includes/tts.php:307
+msgid "Unable to store the audio file in the temporary directory."
+msgstr ""
+
+#: includes/tts.php:336
+msgid "Unable to generate audio file."
+msgstr ""
+
+#: includes/utils.php:86
+msgid "The voice you are hearing is generated by AI technology, not a human."
+msgstr ""
+
+#: includes/utils.php:206
 msgid "Your license is valid and activated."
 msgstr ""
 
-#: includes/utils.php:205
+#: includes/utils.php:210
 msgid "Lifetime License."
 msgstr ""
 
 #. translators: %1$s: the number of active sites. %2$s: max sites
-#: includes/utils.php:218
+#: includes/utils.php:223
 msgid "You have %1$s / %2$s sites activated."
 msgstr ""
 
-#: includes/utils.php:232
+#: includes/utils.php:237
 msgid "License key does not exist"
 msgstr ""
 
-#: includes/utils.php:243
+#: includes/utils.php:248
 msgid "Unregistered domain address"
 msgstr ""
 
-#: includes/utils.php:246
+#: includes/utils.php:251
 msgid "Invalid license or url"
 msgstr ""
 
-#: includes/utils.php:249
+#: includes/utils.php:254
 msgid "Can not add a new domain."
 msgstr ""
 
-#: includes/utils.php:253
+#: includes/utils.php:258
 msgid "An error occurred, please try again."
 msgstr ""
 
-#: includes/utils.php:259
+#: includes/utils.php:264
 msgid "Please enter a valid license key and activate it."
 msgstr ""
 
-#: includes/utils.php:424
+#: includes/utils.php:429
 msgid "License server is not available."
 msgstr ""
 
-#: includes/utils.php:427
+#: includes/utils.php:432
 msgid "No payment info found."
 msgstr ""
 
-#: includes/utils.php:430
+#: includes/utils.php:435
 msgid "Invalid license key."
 msgstr ""
 
-#: includes/utils.php:433
+#: includes/utils.php:438
 msgid "License is invalid for this domain."
 msgstr ""
 
-#: includes/utils.php:436
+#: includes/utils.php:441
 msgid "Your license key has expired."
 msgstr ""
 
-#: includes/utils.php:439
+#: includes/utils.php:444
 msgid "Your license key has been disabled."
 msgstr ""
 
-#: includes/utils.php:442
+#: includes/utils.php:447
 msgid "No credits left to perform this action."
 msgstr ""
 
-#: includes/utils.php:445
+#: includes/utils.php:450
 msgid "Plagiarism service is not available."
 msgstr ""
 
-#: includes/utils.php:451
+#: includes/utils.php:456
 msgid "No content edited!"
 msgstr ""
 
-#: includes/utils.php:454
+#: includes/utils.php:459
 msgid "Failed request for content generation."
 msgstr ""
 
-#: includes/utils.php:457
+#: includes/utils.php:462
 msgid "Failed request for content edit."
 msgstr ""
 
-#: includes/utils.php:460
+#: includes/utils.php:465
 msgid "Failed request for plagiarism check!"
 msgstr ""
 
-#: includes/utils.php:463
+#: includes/utils.php:468
 msgid "Rate limit exceeded! Too many request within a minute."
 msgstr ""
 
-#: includes/utils.php:466
+#: includes/utils.php:471
+msgid "Failed request for audio generation!"
+msgstr ""
+
+#: includes/utils.php:474
+msgid "No audio generated!"
+msgstr ""
+
+#: includes/utils.php:477
+msgid "Character limit exceeded!"
+msgstr ""
+
+#: includes/utils.php:480
 msgid "Unknown error."
+msgstr ""
+
+#: includes/utils.php:1210
+msgid "Vivid"
+msgstr ""
+
+#: includes/utils.php:1211
+msgid "Natural"
 msgstr ""
 
 #: assets/js/admin/block-editor/sidebar.js:68
@@ -883,107 +1069,107 @@ msgstr ""
 msgid "Please enter a title for your post first!"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:148
-#: assets/js/admin/classic-editor.js:134
+#: assets/js/admin/block-editor/sidebar.js:152
+#: assets/js/admin/classic-editor.js:143
 msgid "Please enter a title or write some content. We cannot suggest a new title without clue!"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:186
-#: assets/js/admin/classic-editor.js:181
+#: assets/js/admin/block-editor/sidebar.js:190
+#: assets/js/admin/classic-editor.js:190
 msgid "Please write some more content to get summary recommendations."
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:226
-#: assets/js/admin/classic-editor.js:230
+#: assets/js/admin/block-editor/sidebar.js:230
+#: assets/js/admin/classic-editor.js:239
 msgid "Please enter a title or write some content. We cannot suggest a meta description without clue!"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:281
-#: assets/js/admin/block-editor/sidebar.js:315
-#: assets/js/admin/block-editor/toobar-button.js:127
-#: assets/js/admin/classic-editor.js:289
-#: assets/js/admin/classic-editor.js:320
+#: assets/js/admin/block-editor/sidebar.js:285
+#: assets/js/admin/block-editor/sidebar.js:319
+#: assets/js/admin/block-editor/toobar-button.js:131
+#: assets/js/admin/classic-editor.js:298
+#: assets/js/admin/classic-editor.js:329
 msgid "An error occurred"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:398
-#: assets/js/admin/block-editor/sidebar.js:399
-#: assets/js/admin/classic-editor.js:518
-#: assets/js/admin/classic-editor.js:519
+#: assets/js/admin/block-editor/sidebar.js:410
+#: assets/js/admin/block-editor/sidebar.js:411
+#: assets/js/admin/classic-editor.js:527
+#: assets/js/admin/classic-editor.js:528
 msgid "Copied!"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:436
+#: assets/js/admin/block-editor/sidebar.js:448
 msgid "Write a post for current post title"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:450
-#: assets/js/admin/block-editor/sidebar.js:688
+#: assets/js/admin/block-editor/sidebar.js:462
+#: assets/js/admin/block-editor/sidebar.js:700
 msgid "Title Recommendations"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:463
+#: assets/js/admin/block-editor/sidebar.js:475
 msgid "Create a summary for this post"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:476
+#: assets/js/admin/block-editor/sidebar.js:488
 msgid "Create a meta description for this post"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:489
+#: assets/js/admin/block-editor/sidebar.js:501
 msgid "Check plagiarism for this post"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:503
+#: assets/js/admin/block-editor/sidebar.js:515
 msgid "Plagiarism has been detected! "
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:504
+#: assets/js/admin/block-editor/sidebar.js:516
 msgid "%d result have been found."
 msgid_plural "%d results have been found."
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/js/admin/block-editor/sidebar.js:555
+#: assets/js/admin/block-editor/sidebar.js:567
 msgid "Proofreading check for this post"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:623
+#: assets/js/admin/block-editor/sidebar.js:635
 msgid "Click to Highlight"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:707
-#: assets/js/admin/block-editor/sidebar.js:735
-#: assets/js/admin/block-editor/sidebar.js:784
+#: assets/js/admin/block-editor/sidebar.js:719
+#: assets/js/admin/block-editor/sidebar.js:747
+#: assets/js/admin/block-editor/sidebar.js:796
 msgid "No results have been found."
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:716
+#: assets/js/admin/block-editor/sidebar.js:728
 msgid "Summary Recommendations"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:744
+#: assets/js/admin/block-editor/sidebar.js:756
 msgid "Recommended Meta Descriptions"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:755
+#: assets/js/admin/block-editor/sidebar.js:767
 msgid "Click to copy the meta description to the clipboard."
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:768
+#: assets/js/admin/block-editor/sidebar.js:780
 msgid "Click to copy!"
 msgstr ""
 
-#: assets/js/admin/block-editor/sidebar.js:797
+#: assets/js/admin/block-editor/sidebar.js:809
 msgid "Handywriter Sidebar"
 msgstr ""
 
-#: assets/js/admin/block-editor/toobar-button.js:150
+#: assets/js/admin/block-editor/toobar-button.js:154
 msgid "Error"
 msgstr ""
 
-#: assets/js/admin/block-editor/toobar-button.js:161
-#: assets/js/admin/classic-editor-plugin.js:89
+#: assets/js/admin/block-editor/toobar-button.js:165
+#: assets/js/admin/classic-editor-plugin.js:94
 msgid "Generate content for this selection"
 msgstr ""
 
@@ -991,6 +1177,16 @@ msgstr ""
 msgid "Empty content. Select or write some content to generate a result."
 msgstr ""
 
-#: assets/js/admin/classic-editor-plugin.js:81
+#: assets/js/admin/classic-editor-plugin.js:86
 msgid "An error occurred!"
+msgstr ""
+
+#: assets/js/admin/image-generator.js:80
+#: assets/js/admin/image-generator.js:138
+#: assets/js/admin/tts.js:154
+msgid "An error occurred while processing the request."
+msgstr ""
+
+#: assets/js/admin/tts.js:87
+msgid "Turn text into audio"
 msgstr ""
