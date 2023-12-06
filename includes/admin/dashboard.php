@@ -689,7 +689,7 @@ function register_meta_boxes() {
 
 	/**
 	 * Determine whether show or not show post metaboxes
-	 * by defult it will be displayed if the post type supports title and editor
+	 * by default it will be displayed if the post type supports title and editor
 	 *
 	 * @since  1.0
 	 */

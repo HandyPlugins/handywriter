@@ -277,7 +277,7 @@ function get_content_template_title( $request_args, $results_count ) {
 			break;
 		case 'google-ad-copy':
 			$title = sprintf(
-			// translators: %1$d is the number of results, %2$s advertisiment for
+			// translators: %1$d is the number of results, %2$s advertisement for
 				_n( '%1$d Google Ad Copy generated for %2$s', '%1$d Google Ad Copies generated for %2$s', $results_count, 'handywriter' ),
 				$results_count,
 				$form_data['google_ad_copy_name']

@@ -29,7 +29,7 @@ add_thickbox();
 				<div class="sui-row">
 					<div class="sui-col-md-3">
 						<div class="sui-form-field">
-							<label for="hw-image-generator-prompt" id="hw-image-generator-prompt-label" class="sui-label"><?php esc_html_e( 'Promt', 'handywriter' ); ?></label>
+							<label for="hw-image-generator-prompt" id="hw-image-generator-prompt-label" class="sui-label"><?php esc_html_e( 'Prompt', 'handywriter' ); ?></label>
 							<textarea
 								placeholder="<?php esc_html_e( 'What do you want to see?', 'handywriter' ); ?>"
 								id="hw-image-generator-prompt"
@@ -40,7 +40,7 @@ add_thickbox();
 								maxlength="1000"
 								required
 							></textarea>
-							<span class="sui-description"><?php esc_html_e( 'Enter promt for image generation.', 'handywriter' ); ?></span>
+							<span class="sui-description"><?php esc_html_e( 'Enter prompt for image generation.', 'handywriter' ); ?></span>
 							<div class="sui-form-field">
 								<label class="sui-label"><?php esc_html_e( 'Model', 'handywriter' ); ?> </label>
 								<select id="image_generator_model" name="image_generator[model]" class="sui-select">
