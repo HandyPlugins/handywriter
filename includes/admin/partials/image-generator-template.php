@@ -42,25 +42,24 @@ add_thickbox();
 							></textarea>
 							<span class="sui-description"><?php esc_html_e( 'Enter prompt for image generation.', 'handywriter' ); ?></span>
 							<div class="sui-form-field">
-								<label class="sui-label"><?php esc_html_e( 'Model', 'handywriter' ); ?> </label>
+								<label class="sui-label" for="image_generator_model"><?php esc_html_e( 'Model', 'handywriter' ); ?> </label>
 								<select id="image_generator_model" name="image_generator[model]" class="sui-select">
 									<?php foreach ( $image_models as $model => $model_name ) : ?>
 										<option value="<?php echo esc_attr( $model ); ?>"><?php echo esc_html( $model_name ); ?></option>
 									<?php endforeach; ?>
 								</select>
-
 							</div>
 
 							<div class="sui-form-field">
-								<label class="sui-label"><?php esc_html_e( 'Resolution', 'handywriter' ); ?></label>
+								<label class="sui-label" for="image_generator_image_size"><?php esc_html_e( 'Resolution', 'handywriter' ); ?></label>
 								<select id="image_generator_image_size" name="image_generator[size]" class="sui-select">
 									<option value="1024x1024">1024x1024</option>
 								</select>
 							</div>
 
 							<div class="sui-form-field" id="image-style-row">
-								<label class="sui-label"><?php esc_html_e( 'Style', 'handywriter' ); ?></label>
-								<select id="image_style" name="image_generator[style]" class="sui-select">
+								<label class="sui-label" for="hw_image_style"><?php esc_html_e( 'Style', 'handywriter' ); ?></label>
+								<select id="hw_image_style" name="image_generator[style]" class="sui-select">
 									<?php foreach ( $image_styles as $style => $style_name ) : ?>
 										<option value="<?php echo esc_attr( $style ); ?>"><?php echo esc_html( $style_name ); ?></option>
 									<?php endforeach; ?>
@@ -68,13 +67,13 @@ add_thickbox();
 							</div>
 
 							<div class="sui-form-field" id="image-count-row" style="display: none;">
-								<label class="sui-label"><?php esc_html_e( 'Image Count', 'handywriter' ); ?></label>
+								<label class="sui-label" for="image_count"><?php esc_html_e( 'Image Count', 'handywriter' ); ?></label>
 								<input class="sui-form-control image-number" id="image_count" name="image_generator[count]" value="1" type="number" min="1" max="10">
 								<span class="sui-description"><?php esc_html_e( 'Enter the number of images to generate. Note that generating a greater number of images will consume more credits.', 'handywriter' ); ?></span>
 							</div>
 
 							<div class="sui-form-field" role="radiogroup" id="enable-hd-row">
-								<label class="sui-label"><?php esc_html_e( 'Quality', 'handywriter' ); ?></label>
+								<span class="sui-label" id="image_generator_standard_quality_label"><?php esc_html_e( 'Quality', 'handywriter' ); ?></span>
 								<label for="image_generator_standard_quality" class="sui-radio">
 									<input
 										value="standard"

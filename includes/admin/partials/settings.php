@@ -287,7 +287,7 @@ $license_info = get_license_info();
 				<div style=" <?php echo( ! $settings['enable_tts'] ? 'display:none;' : '' ); ?>" tabindex="0" id="tts_control">
 					<div class="sui-box-settings-row">
 						<div class="sui-box-settings-col-1">
-							<span class="sui-settings-label"><?php esc_html_e( 'TTS disclosure', 'handywriter' ); ?></span>
+							<span class="sui-settings-label" id="tts_disclosure_label"><?php esc_html_e( 'TTS disclosure', 'handywriter' ); ?></span>
 						</div>
 
 						<div class="sui-box-settings-col-2">
@@ -316,7 +316,7 @@ $license_info = get_license_info();
 						?>
 						<div class="sui-box-settings-col-2">
 							<div class="sui-form-field">
-								<select name="tts_model" id="content-language" class="sui-select">
+								<select name="tts_model" id="hw_tts_model" class="sui-select">
 									<?php foreach ( $tts_models as $tts_model => $model_label ) : ?>
 										<option <?php selected( $tts_model, $settings['tts_model'] ); ?> value="<?php echo esc_attr( $tts_model ); ?>">
 											<?php echo esc_attr( $model_label ); ?>
@@ -337,7 +337,7 @@ $license_info = get_license_info();
 						?>
 						<div class="sui-box-settings-col-2">
 							<div class="sui-form-field">
-								<select name="tts_voice" id="content-language" class="sui-select">
+								<select name="tts_voice" id="hw_tts_voice" class="sui-select">
 									<?php foreach ( $tts_voices as $tts_voice => $voice_label ) : ?>
 										<option <?php selected( $tts_voice, $settings['tts_voice'] ); ?> value="<?php echo esc_attr( $tts_voice ); ?>">
 											<?php echo esc_attr( $voice_label ); ?>
