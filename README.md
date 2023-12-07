@@ -5,9 +5,9 @@ Handywriter
 
 AI-Powered assistant for WordPress. Effortlessly Craft Unique Content, and Seamlessly Generate Captivating Images and Audio.
 
-__Website__: [http://handyplugins.co/handywriter](http://handyplugins.co/handywriter/)
+__Website__: [https://handyplugins.co/handywriter](https://handyplugins.co/handywriter/)
 
-__Docs__: [http://handyplugins.co/handywriter/docs](http://handyplugins.co/handywriter/docs/)
+__Docs__: [https://handyplugins.co/handywriter/docs](https://handyplugins.co/handywriter/docs/)
 
 ### Features
 
