@@ -2,7 +2,7 @@
 Contributors:      handyplugins, m_uysl
 Tags:              content writing, AI, GPT, copywriting, copywriter, TTS, speech, image generator, gpt4
 Requires at least: 5.4
-Tested up to:      6.4
+Tested up to:      6.5
 Requires PHP:      7.2.5
 Stable tag:        1.3
 License:           GPLv2 or later
@@ -76,10 +76,12 @@ Bug reports and pull requests are welcome on [GitHub](https://github.com/HandyPl
 
 __If you like Handywriter, then consider checking out our other projects:__
 
+* <a href="https://poweredcache.com/" rel="friend">Powered Cache</a> – Caching and Optimization for WordPress – Easily Improve PageSpeed & Web Vitals Score
 * <a href="https://handyplugins.co/magic-login-pro/" rel="friend">Magic Login Pro</a> – Easy, secure, and passwordless authentication for WordPress.
 * <a href="https://handyplugins.co/easy-text-to-speech/" rel="friend">Easy Text-to-Speech for WordPress</a> – Transform your textual content into high-quality synthesized speech with Amazon Polly.
 * <a href="https://handyplugins.co/paddlepress-pro/" rel="friend">PaddlePress PRO</a> – Paddle Plugin for WordPress
 * <a href="https://poweredcache.com/" rel="friend">Powered Cache</a> – Caching and Optimization for WordPress – Easily Improve PageSpeed & Web Vitals Score
+* <a href="https://handyplugins.co/wp-accessibility-toolkit/" rel="friend">WP Accessibility Toolkit</a> – A collection of tools to help you make your WordPress more accessible.
 
 = Documentation =
 Our documentation can be found on [https://handyplugins.co/handywriter/docs/](https://handyplugins.co/handywriter/docs/)
