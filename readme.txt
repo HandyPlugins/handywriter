@@ -1,6 +1,6 @@
 === Handywriter – AI-Powered Assistant for WordPress - Powered by GPT-4 & ChatGPT & DALL-E ===
 Contributors:      handyplugins, m_uysl
-Tags:              ai, gpt, openai, text-to-speech, copilot, chatgpt
+Tags:              ai, gpt, openai, copilot, chatgpt
 Requires at least: 5.4
 Tested up to:      6.5
 Requires PHP:      7.2.5
