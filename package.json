@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@wpmudev/shared-ui": "^2.12.23",
-    "10up-toolkit": "^5.2",
+    "10up-toolkit": "^6.0",
     "mark.js": "^8.11.1",
     "typewriter-effect": "^2.18.0"
   },
