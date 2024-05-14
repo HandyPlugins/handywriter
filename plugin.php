@@ -3,7 +3,7 @@
  * Plugin Name:       Handywriter
  * Plugin URI:        https://handyplugins.co/handywriter/
  * Description:       Handywriter is an AI-powered writing assistant for WordPress, enabling you to write better and faster. It now includes image and audio generation features, allowing for seamless integration of visual and auditory content into your posts.
- * Version:           1.3
+ * Version:           1.4
  * Requires at least: 5.4
  * Requires PHP:      7.2.5
  * Author:            HandyPlugins
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Useful global constants.
-define( 'HANDYWRITER_VERSION', '1.3' );
+define( 'HANDYWRITER_VERSION', '1.4' );
 define( 'HANDYWRITER_PLUGIN_FILE', __FILE__ );
 define( 'HANDYWRITER_URL', plugin_dir_url( __FILE__ ) );
 define( 'HANDYWRITER_PATH', plugin_dir_path( __FILE__ ) );

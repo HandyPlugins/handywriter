@@ -1,10 +1,10 @@
-=== Handywriter – AI-Powered Assistant for WordPress - Powered by GPT-4 & ChatGPT & DALL-E ===
+=== Handywriter – AI-Powered Assistant for WordPress - Powered by GPT-4o & ChatGPT & DALL-E ===
 Contributors:      handyplugins, m_uysl
 Tags:              ai, gpt, openai, copilot, chatgpt
 Requires at least: 5.4
 Tested up to:      6.5
 Requires PHP:      7.2.5
-Stable tag:        1.3
+Stable tag:        1.4
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Donate link:       https://handyplugins.co/donate/
@@ -84,7 +84,7 @@ __If you like Handywriter, then consider checking out our other projects:__
 * <a href="https://handyplugins.co/wp-accessibility-toolkit/" rel="friend">WP Accessibility Toolkit</a> – A collection of tools to help you make your WordPress more accessible.
 
 = Documentation =
-Our documentation can be found on [https://handyplugins.co/handywriter/docs/](https://handyplugins.co/handywriter/docs/)
+Our documentation can be found on [https://handyplugins.co/docs-category/handywriter/](https://handyplugins.co/docs-category/handywriter/)
 
 == Installation ==
 1. Upload the entire `/handywriter` directory to the `/wp-content/plugins/` directory.
@@ -108,7 +108,7 @@ Yes, it works with both classic and block editors.
 
 = Do I need a license? =
 
-The plugin is free. But you will need a license to get the benefits of the plugin. You can [choose the best plan that suits you](https://handyplugins.co/handywriter/pricing/) on our website.
+The plugin is free. But you will need a license to get the benefits of the plugin. You can [choose the best plan that suits you](https://handyplugins.co/handywriter/#pricing) on our website.
 
 = Can I use my own OpenAI API key with Handywriter? =
 
@@ -128,6 +128,12 @@ No, Handywriter does not support the use of personal OpenAI API keys. Our plugin
 9. Content templates.
 
 == Changelog ==
+
+= 1.4 (May 14, 2024) =
+* GPT-4o Update
+* Dependency updates.
+* Small tweaks and improvements.
+* Tested with WP 6.5
 
 = 1.3 (December 6, 2023) =
 * [New feature]: Image generator.
