@@ -44,7 +44,7 @@ __Content Templates:__ Handywriter will create the content you need the most, ri
 
 __History:__ You can keep records of the generated results.
 
-**[All Features](https://handyplugins.co/handywriter/features/)**
+**[All Features](https://handyplugins.co/handywriter/#features)**
 
 = Content Templates  =
 
