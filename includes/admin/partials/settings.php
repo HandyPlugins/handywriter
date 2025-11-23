@@ -49,7 +49,7 @@ $license_info = get_license_info();
 									autocomplete="off"
 								/>
 								<span class="sui-field-suffix">
-									<?php if ( false !== $license_info && 'valid' === $license_info['license_status'] ) : ?>
+									<?php if ( false !== $license_info && ! empty( $license_info['license_status'] ) && 'valid' === $license_info['license_status'] ) : ?>
 										<input type="submit" class="sui-button sui-button-red" name="handywriter_license_deactivate" id="handywriter-save-settings" value="<?php esc_html_e( 'Deactivate', 'handywriter' ); ?>" />
 									<?php else : ?>
 										<input type="submit" class="sui-button sui-button-green" name="handywriter_license_activate" id="handywriter-save-settings" value="<?php esc_html_e( 'Activate', 'handywriter' ); ?>" />
