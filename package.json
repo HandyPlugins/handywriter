@@ -18,7 +18,7 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@wpmudev/shared-ui": "^2.12.23",
+    "@wpmudev/shared-ui": "^2.12.25",
     "10up-toolkit": "^6.5",
     "mark.js": "^8.11.1",
     "typewriter-effect": "^2.18.0"
