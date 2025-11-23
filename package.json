@@ -1,6 +1,6 @@
 {
   "name": "handywriter",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "scripts": {
     "start": "npm run watch",
     "watchhot": "10up-toolkit watch --port=5010 --hot",
