@@ -2,16 +2,16 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Handywriter 1.4.2\n"
+"Project-Id-Version: Handywriter 1.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/handywriter\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-13T11:43:59+00:00\n"
+"POT-Creation-Date: 2025-11-23T13:21:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: handywriter\n"
 
 #. Plugin Name of the plugin
@@ -92,7 +92,7 @@ msgstr ""
 
 #: includes/admin/dashboard.php:244
 #: includes/admin/dashboard.php:286
-#: includes/utils.php:453
+#: includes/utils.php:454
 msgid "No content generated!"
 msgstr ""
 
@@ -120,6 +120,7 @@ msgstr ""
 #. translators: %s: similarity percentage
 #: includes/admin/dashboard.php:376
 #: assets/js/admin/block-editor/sidebar.js:543
+#, php-format,js-format
 msgid "%s%% of the similarity found on"
 msgstr ""
 
@@ -135,6 +136,7 @@ msgstr ""
 #. translators: %d: The count of proofreading suggestions
 #: includes/admin/dashboard.php:484
 #: assets/js/admin/block-editor/sidebar.js:581
+#, php-format,js-format
 msgid "%d suggestion."
 msgid_plural "%d suggestions."
 msgstr[0] ""
@@ -142,6 +144,7 @@ msgstr[1] ""
 
 #. translators: %s: The count of the results
 #: includes/admin/dashboard.php:581
+#, php-format
 msgid "%s Result Generated"
 msgid_plural "%s Results Generated"
 msgstr[0] ""
@@ -515,6 +518,7 @@ msgstr ""
 
 #. translators: %s: https://handyplugins.co
 #: includes/admin/partials/footer.php:27
+#, php-format
 msgid "Made with <i class=\"sui-icon-heart\"></i> by <a href=\"%s\" rel=\"noopener\" target=\"_blank\">HandyPlugins</a>"
 msgstr ""
 
@@ -633,6 +637,7 @@ msgstr ""
 
 #. translators: %d: The number of available credits
 #: includes/admin/partials/settings.php:98
+#, php-format
 msgid "%d credits left. Data may be delayed up to 5 minutes."
 msgstr ""
 
@@ -798,6 +803,7 @@ msgstr ""
 
 #. translators: %1$s is the number of results, %2$s is the bullet point about.
 #: includes/history.php:213
+#, php-format
 msgid "%1$d Product Review generated for %2$s"
 msgid_plural "%1$d Product Reviews generated for %2$s"
 msgstr[0] ""
@@ -805,6 +811,7 @@ msgstr[1] ""
 
 #. translators: %1$s is the number of results, %2$s is the bullet point about.
 #: includes/history.php:221
+#, php-format
 msgid "%1$d Cold Email generated for %2$s"
 msgid_plural "%1$d Cold Emails generated for %2$s"
 msgstr[0] ""
@@ -812,6 +819,7 @@ msgstr[1] ""
 
 #. translators: %1$s is the number of results, %2$s is the bullet point about.
 #: includes/history.php:229
+#, php-format
 msgid "%1$d Poll generated about %2$s"
 msgid_plural "%1$d Polls generated about %2$s"
 msgstr[0] ""
@@ -819,6 +827,7 @@ msgstr[1] ""
 
 #. translators: %1$s is the number of results, %2$s is the bullet point about.
 #: includes/history.php:237
+#, php-format
 msgid "%1$d Bullet Point generated for %2$s"
 msgid_plural "%1$d Bullet Points generated for %2$s"
 msgstr[0] ""
@@ -826,6 +835,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the case study for.
 #: includes/history.php:245
+#, php-format
 msgid "%1$d Case Study generated about %2$s"
 msgid_plural "%1$d Case Studies generated about %2$s"
 msgstr[0] ""
@@ -833,6 +843,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the call to action about
 #: includes/history.php:253
+#, php-format
 msgid "%1$d Call to Action Idea generated about %2$s"
 msgid_plural "%1$d Call to Action Ideas generated about %2$s"
 msgstr[0] ""
@@ -840,6 +851,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the topic
 #: includes/history.php:263
+#, php-format
 msgid "%1$d Blog Idea generated for %2$s"
 msgid_plural "%1$d Blog Ideas generated for %2$s"
 msgstr[0] ""
@@ -847,6 +859,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the product description
 #: includes/history.php:272
+#, php-format
 msgid "%1$d Ecommerce Product Description generated for %2$s"
 msgid_plural "%1$d Ecommerce Product Descriptions generated for %2$s"
 msgstr[0] ""
@@ -854,6 +867,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s advertisement for
 #: includes/history.php:281
+#, php-format
 msgid "%1$d Google Ad Copy generated for %2$s"
 msgid_plural "%1$d Google Ad Copies generated for %2$s"
 msgstr[0] ""
@@ -861,6 +875,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s value proposition for
 #: includes/history.php:290
+#, php-format
 msgid "%1$d Value Proposition generated about %2$s"
 msgid_plural "%1$d Value Propositions generated about %2$s"
 msgstr[0] ""
@@ -868,6 +883,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the description of the video
 #: includes/history.php:299
+#, php-format
 msgid "%1$d YouTube Video Description generated about %2$s"
 msgid_plural "%1$d YouTube Video Descriptions generated about %2$s"
 msgstr[0] ""
@@ -875,6 +891,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the name of the person
 #: includes/history.php:308
+#, php-format
 msgid "%1$d Personal Bio generated for %2$s"
 msgid_plural "%1$d Personal Bio generated for %2$s"
 msgstr[0] ""
@@ -882,6 +899,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s is the title of the content
 #: includes/history.php:342
+#, php-format
 msgid "%1$d Title generated for %2$s"
 msgid_plural "%1$d Titles generated for %2$s"
 msgstr[0] ""
@@ -889,6 +907,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s content
 #: includes/history.php:354
+#, php-format
 msgid "%1$d Summary generated for %2$s"
 msgid_plural "%1$d Summaries generated for %2$s"
 msgstr[0] ""
@@ -896,6 +915,7 @@ msgstr[1] ""
 
 #. translators: %1$d is the number of results, %2$s user input (title or content)
 #: includes/history.php:362
+#, php-format
 msgid "%1$d Meta Description generated for %2$s"
 msgid_plural "%1$d Meta Descriptions generated for %2$s"
 msgstr[0] ""
@@ -903,6 +923,7 @@ msgstr[1] ""
 
 #. translators:%s current time in mysql format
 #: includes/history.php:369
+#, php-format
 msgid "Editor Content Generation on %s"
 msgstr ""
 
@@ -952,120 +973,121 @@ msgstr ""
 msgid "Unable to generate audio file."
 msgstr ""
 
-#: includes/utils.php:86
-msgid "The voice you are hearing is generated by AI technology, not a human."
+#: includes/utils.php:204
+msgid "Unknown licensing error, please try again later!"
 msgstr ""
 
-#: includes/utils.php:206
+#: includes/utils.php:207
 msgid "Your license is valid and activated."
 msgstr ""
 
-#: includes/utils.php:210
+#: includes/utils.php:211
 msgid "Lifetime License."
 msgstr ""
 
 #. translators: %1$s: the number of active sites. %2$s: max sites
-#: includes/utils.php:223
+#: includes/utils.php:224
+#, php-format
 msgid "You have %1$s / %2$s sites activated."
 msgstr ""
 
-#: includes/utils.php:237
+#: includes/utils.php:238
 msgid "License key does not exist"
 msgstr ""
 
-#: includes/utils.php:248
+#: includes/utils.php:249
 msgid "Unregistered domain address"
 msgstr ""
 
-#: includes/utils.php:251
+#: includes/utils.php:252
 msgid "Invalid license or url"
 msgstr ""
 
-#: includes/utils.php:254
+#: includes/utils.php:255
 msgid "Can not add a new domain."
 msgstr ""
 
-#: includes/utils.php:258
+#: includes/utils.php:259
 msgid "An error occurred, please try again."
 msgstr ""
 
-#: includes/utils.php:264
+#: includes/utils.php:265
 msgid "Please enter a valid license key and activate it."
 msgstr ""
 
-#: includes/utils.php:429
+#: includes/utils.php:430
 msgid "License server is not available."
 msgstr ""
 
-#: includes/utils.php:432
+#: includes/utils.php:433
 msgid "No payment info found."
 msgstr ""
 
-#: includes/utils.php:435
+#: includes/utils.php:436
 msgid "Invalid license key."
 msgstr ""
 
-#: includes/utils.php:438
+#: includes/utils.php:439
 msgid "License is invalid for this domain."
 msgstr ""
 
-#: includes/utils.php:441
+#: includes/utils.php:442
 msgid "Your license key has expired."
 msgstr ""
 
-#: includes/utils.php:444
+#: includes/utils.php:445
 msgid "Your license key has been disabled."
 msgstr ""
 
-#: includes/utils.php:447
+#: includes/utils.php:448
 msgid "No credits left to perform this action."
 msgstr ""
 
-#: includes/utils.php:450
+#: includes/utils.php:451
 msgid "Plagiarism service is not available."
 msgstr ""
 
-#: includes/utils.php:456
+#: includes/utils.php:457
 msgid "No content edited!"
 msgstr ""
 
-#: includes/utils.php:459
+#: includes/utils.php:460
 msgid "Failed request for content generation."
 msgstr ""
 
-#: includes/utils.php:462
+#: includes/utils.php:463
 msgid "Failed request for content edit."
 msgstr ""
 
-#: includes/utils.php:465
+#: includes/utils.php:466
 msgid "Failed request for plagiarism check!"
 msgstr ""
 
-#: includes/utils.php:468
+#: includes/utils.php:469
 msgid "Rate limit exceeded! Too many request within a minute."
 msgstr ""
 
-#: includes/utils.php:471
+#: includes/utils.php:472
 msgid "Failed request for audio generation!"
 msgstr ""
 
-#: includes/utils.php:474
+#: includes/utils.php:475
 msgid "No audio generated!"
 msgstr ""
 
-#: includes/utils.php:477
+#: includes/utils.php:478
 msgid "Character limit exceeded!"
 msgstr ""
 
-#: includes/utils.php:480
+#: includes/utils.php:481
 msgid "Unknown error."
 msgstr ""
 
-#: includes/utils.php:1210
+#: includes/utils.php:1211
 msgid "Vivid"
 msgstr ""
 
-#: includes/utils.php:1211
+#: includes/utils.php:1212
 msgid "Natural"
 msgstr ""
 
@@ -1130,6 +1152,7 @@ msgid "Plagiarism has been detected! "
 msgstr ""
 
 #: assets/js/admin/block-editor/sidebar.js:516
+#, js-format
 msgid "%d result have been found."
 msgid_plural "%d results have been found."
 msgstr[0] ""
