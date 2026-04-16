@@ -66,7 +66,7 @@ function setup() {
  * @since  1.0
  */
 function add_sui_admin_body_class( $classes ) {
-	$classes .= ' sui-2-12-25 ';
+	$classes .= ' sui-2-12-27 ';
 
 	return $classes;
 }
