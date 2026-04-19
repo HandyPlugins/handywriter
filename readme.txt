@@ -2,9 +2,9 @@
 Contributors:      handyplugins, m_uysl
 Tags:              ai, gpt, openai, copilot, chatgpt
 Requires at least: 5.4
-Tested up to:      6.9
+Tested up to:      7.0
 Requires PHP:      7.2.5
-Stable tag:        1.4.3
+Stable tag:        1.4.4
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Donate link:       https://handyplugins.co/donate/
@@ -129,6 +129,10 @@ No, Handywriter does not support the use of personal OpenAI API keys. Our plugin
 9. Content templates.
 
 == Changelog ==
+
+= 1.4.4 (April 19, 2026) =
+* Dependency updates.
+* Tested with WP 7.0
 
 = 1.4.3 (November 23, 2025) =
 * [Fixed]: _load_textdomain_just_in_time deprecation warning.
