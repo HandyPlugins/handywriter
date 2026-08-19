@@ -1,10 +1,10 @@
-=== Handywriter – AI-Powered Assistant for WordPress - Powered by GPT-4o & ChatGPT & DALL-E ===
+=== Handywriter – AI-Powered Assistant for WordPress - Powered by ChatGPT & DALL-E ===
 Contributors:      handyplugins, m_uysl
 Tags:              ai, gpt, openai, copilot, chatgpt
 Requires at least: 5.4
-Tested up to:      7.0
+Tested up to:      7.1
 Requires PHP:      7.2.5
-Stable tag:        1.4.4
+Stable tag:        1.4.5
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Donate link:       https://handyplugins.co/donate/
@@ -129,6 +129,10 @@ No, Handywriter does not support the use of personal OpenAI API keys. Our plugin
 9. Content templates.
 
 == Changelog ==
+
+= 1.4.5 (August 19, 2026) =
+* Dependency updates.
+* Tested with WP 7.1
 
 = 1.4.4 (April 19, 2026) =
 * Dependency updates.
