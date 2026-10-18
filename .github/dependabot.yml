@@ -1,0 +1,59 @@
+# Shared Dependabot config for HandyPlugins repositories.
+# Security fixes are grouped into one PR per ecosystem and arrive as soon as they are available.
+# Routine version updates are grouped into one PR per ecosystem once a month.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 3
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      # Security fixes get their own PR so they are not held back by the monthly batch
+      npm-security:
+        applies-to: security-updates
+        patterns: ["*"]
+      # @wordpress/* packages should move together
+      wordpress-packages:
+        applies-to: version-updates
+        patterns: ["@wordpress/*"]
+      npm-all:
+        applies-to: version-updates
+        patterns: ["*"]
+        exclude-patterns: ["@wordpress/*"]
+        update-types: ["minor", "patch"]
+      # Major versions stay out of the groups and arrive as individual PRs (capped by the limit above)
+
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 2
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      composer-security:
+        applies-to: security-updates
+        patterns: ["*"]
+      composer-all:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      timezone: "America/New_York"
+    labels: ["dependencies"]
+    commit-message:
+      prefix: "chore(ci)"
+    groups:
+      actions-all:
+        patterns: ["*"]
