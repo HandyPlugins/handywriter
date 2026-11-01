@@ -21,7 +21,7 @@
     "@wpmudev/shared-ui": "2.12.27",
     "10up-toolkit": "7.0.0",
     "mark.js": "^8.11.1",
-    "typewriter-effect": "^2.18.0"
+    "typewriter-effect": "^3.3.0"
   },
   "dependencies": {
     "prop-types": "^15.7.2"
